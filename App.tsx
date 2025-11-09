@@ -119,14 +119,15 @@ const App: React.FC = () => {
     };
 
     const handlePlayVideo = () => {
-        setVideoPlaying(true);
-        // Auto-play the video when thumbnail is clicked
+        // Update the iframe src to include autoplay BEFORE hiding the overlay
         const iframe = document.getElementById('vsl-video') as HTMLIFrameElement;
         if (iframe) {
-            const src = iframe.src;
-            // Add autoplay parameter
-            iframe.src = src.includes('?') ? src + '&autoplay=1' : src + '?autoplay=1';
+            // Completely reload the iframe with autoplay enabled
+            const videoId = 'kJfkQ633-Hg';
+            iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0&fs=0&disablekb=1&playsinline=1&widget_referrer=0&origin=${window.location.origin}&enablejsapi=0`;
         }
+        // Hide the thumbnail overlay
+        setVideoPlaying(true);
     };
     
     const originalPrice = 1898;
