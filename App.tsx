@@ -179,10 +179,10 @@ const App: React.FC = () => {
                 <div className="bg-gradient-to-br from-slate-900 to-slate-800 py-8 px-5">
                     <div className="text-center mb-6">
                         <h1 className="text-3xl md:text-4xl font-extrabold text-white mb-3 leading-tight">
-                            كيف تخلص رجل مصري عمره 67 عاماً من آلام المفاصل في 14 يوماً فقط؟
+                            اكتشف الطريقة الطبيعية التي يستخدمها المصريون للراحة اليومية
                         </h1>
                         <p className="text-xl md:text-2xl text-yellow-300 font-bold">
-                            الطريقة الغريبة التي يستخدمها الآن أكثر من 12,847 مصري...
+                            كريم موضعي بمكونات طبيعية قد يساعد في دعم راحة المفاصل
                         </p>
                         <p className="text-lg text-gray-300 mt-3">
                             (شاهد الفيديو حتى النهاية لمعرفة العرض الحصري)
@@ -689,7 +689,6 @@ const App: React.FC = () => {
                     <CtaButton onClick={scrollToForm} />
                 </div>
             </div>
-            </>
             )}
 
             {/* Important Disclaimers Section - Always rendered but toggleable */}
