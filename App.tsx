@@ -125,9 +125,9 @@ const App: React.FC = () => {
         // Update the iframe src to include autoplay BEFORE hiding the overlay
         const iframe = document.getElementById('vsl-video') as HTMLIFrameElement;
         if (iframe) {
-            // Completely reload the iframe with autoplay and mute (required for iOS)
+            // Completely reload the iframe with autoplay (unmuted - user clicked)
             const videoId = 'kJfkQ633-Hg';
-            iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0&fs=0&disablekb=1&playsinline=1&widget_referrer=0&origin=${window.location.origin}&enablejsapi=1`;
+            iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0&fs=0&disablekb=1&playsinline=1&widget_referrer=0&origin=${window.location.origin}&enablejsapi=1`;
         }
         // Hide the thumbnail overlay
         setVideoPlaying(true);
