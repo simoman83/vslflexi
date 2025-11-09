@@ -190,7 +190,11 @@ const App: React.FC = () => {
                     </div>
 
                     {/* Video Player with Custom Thumbnail */}
-                    <div className="relative w-full max-w-4xl mx-auto overflow-hidden rounded-lg" style={{ paddingBottom: '56.25%' }}>
+                    <div
+                        className="relative w-full max-w-4xl mx-auto overflow-hidden rounded-lg"
+                        style={{ paddingBottom: '56.25%' }}
+                        onContextMenu={(e) => e.preventDefault()}
+                    >
                         <iframe
                             id="vsl-video"
                             className="absolute top-0 left-0 w-full h-full shadow-2xl"
