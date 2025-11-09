@@ -217,18 +217,7 @@ const App: React.FC = () => {
                         {/* Transparent overlays to block UI elements without being visible */}
                         {videoPlaying && (
                             <>
-                                {/* Full overlay to block right-click and YouTube UI */}
-                                <div
-                                    className="absolute top-0 left-0 w-full h-full z-40"
-                                    style={{
-                                        background: 'transparent',
-                                        pointerEvents: 'auto',
-                                        cursor: 'default'
-                                    }}
-                                    onContextMenu={(e) => e.preventDefault()}
-                                />
-
-                                {/* Block channel name and avatar (top-left) - INVISIBLE */}
+                                {/* Block channel name and avatar (top-left) */}
                                 <div
                                     className="absolute z-50"
                                     style={{
@@ -243,7 +232,7 @@ const App: React.FC = () => {
                                     onContextMenu={(e) => e.preventDefault()}
                                 />
 
-                                {/* Block Watch Later and Share buttons (top-right) - INVISIBLE */}
+                                {/* Block Watch Later and Share buttons (top-right) */}
                                 <div
                                     className="absolute z-50"
                                     style={{
@@ -258,14 +247,30 @@ const App: React.FC = () => {
                                     onContextMenu={(e) => e.preventDefault()}
                                 />
 
-                                {/* Block YouTube logo (bottom-right) - INVISIBLE */}
+                                {/* Block YouTube logo and Watch on YouTube button (bottom-right and center-bottom) */}
                                 <div
                                     className="absolute z-50"
                                     style={{
-                                        bottom: '10px',
-                                        right: '10px',
-                                        width: '100px',
-                                        height: '35px',
+                                        bottom: '0px',
+                                        right: '0px',
+                                        left: '0px',
+                                        height: '60px',
+                                        background: 'transparent',
+                                        pointerEvents: 'auto',
+                                        cursor: 'default'
+                                    }}
+                                    onContextMenu={(e) => e.preventDefault()}
+                                />
+
+                                {/* Block center area (Watch on YouTube button area) */}
+                                <div
+                                    className="absolute z-50"
+                                    style={{
+                                        top: '50%',
+                                        left: '50%',
+                                        transform: 'translate(-50%, -50%)',
+                                        width: '200px',
+                                        height: '80px',
                                         background: 'transparent',
                                         pointerEvents: 'auto',
                                         cursor: 'default'
