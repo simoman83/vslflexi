@@ -125,9 +125,9 @@ const App: React.FC = () => {
         // Update the iframe src to include autoplay BEFORE hiding the overlay
         const iframe = document.getElementById('vsl-video') as HTMLIFrameElement;
         if (iframe) {
-            // Completely reload the iframe with autoplay and enablejsapi for tracking
+            // Completely reload the iframe with autoplay and mute (required for iOS)
             const videoId = 'kJfkQ633-Hg';
-            iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0&fs=0&disablekb=1&playsinline=1&widget_referrer=0&origin=${window.location.origin}&enablejsapi=1`;
+            iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0&fs=0&disablekb=1&playsinline=1&widget_referrer=0&origin=${window.location.origin}&enablejsapi=1`;
         }
         // Hide the thumbnail overlay
         setVideoPlaying(true);
@@ -247,14 +247,14 @@ const App: React.FC = () => {
                                     onContextMenu={(e) => e.preventDefault()}
                                 />
 
-                                {/* Block YouTube logo and Watch on YouTube button (bottom-right and center-bottom) */}
+                                {/* Block Watch on YouTube button (bottom area - mobile & desktop) */}
                                 <div
                                     className="absolute z-50"
                                     style={{
                                         bottom: '0px',
                                         right: '0px',
                                         left: '0px',
-                                        height: '60px',
+                                        height: '80px',
                                         background: 'transparent',
                                         pointerEvents: 'auto',
                                         cursor: 'default'
@@ -262,15 +262,14 @@ const App: React.FC = () => {
                                     onContextMenu={(e) => e.preventDefault()}
                                 />
 
-                                {/* Block center area (Watch on YouTube button area) */}
+                                {/* Block YouTube branding (bottom-left corner) */}
                                 <div
                                     className="absolute z-50"
                                     style={{
-                                        top: '50%',
-                                        left: '50%',
-                                        transform: 'translate(-50%, -50%)',
-                                        width: '200px',
-                                        height: '80px',
+                                        bottom: '45px',
+                                        left: '10px',
+                                        width: '120px',
+                                        height: '40px',
                                         background: 'transparent',
                                         pointerEvents: 'auto',
                                         cursor: 'default'
