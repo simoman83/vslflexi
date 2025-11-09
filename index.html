@@ -126,6 +126,47 @@
       .animate-pop-in {
           animation: pop-in 0.5s ease-out forwards;
       }
+
+      /* Hide all YouTube UI elements */
+      iframe {
+        pointer-events: auto;
+      }
+
+      /* Hide YouTube branding, controls, and UI elements */
+      .ytp-chrome-top,
+      .ytp-chrome-bottom,
+      .ytp-gradient-top,
+      .ytp-gradient-bottom,
+      .ytp-show-cards-title,
+      .ytp-title,
+      .ytp-title-text,
+      .ytp-chrome-controls,
+      .ytp-watch-later-button,
+      .ytp-share-button,
+      .ytp-watermark,
+      .ytp-pause-overlay,
+      .ytp-scroll-min,
+      .ytp-player-content,
+      .ytp-cards-teaser,
+      .ytp-ce-element,
+      .ytp-cards-button,
+      .ytp-end-screen-content,
+      .ytp-show-tiles,
+      .ytp-suggested-action,
+      .ytp-endscreen-content,
+      .ytp-info,
+      .ytp-overflow-panel,
+      .ytp-title-channel,
+      .ytp-channel-name {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+      }
+
+      /* Additional CSS to hide YouTube UI using iframe styling */
+      #vsl-video {
+        clip-path: inset(0px 0px 0px 0px);
+      }
     </style>
   <script type="importmap">
 {
