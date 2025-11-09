@@ -144,9 +144,9 @@ const App: React.FC = () => {
             progress += 1;
             setVideoWatchedPercent(progress);
 
-            // Show offer at 75% (assuming ~11 minute video = 660 seconds, 75% = 495 seconds)
+            // Show offer at 33% (assuming ~11 minute video = 660 seconds, 33% = 218 seconds)
             // We'll simulate 1% every 7 seconds (660/100 = 6.6)
-            if (progress >= 75 && !showOffer) {
+            if (progress >= 33 && !showOffer) {
                 setShowOffer(true);
                 clearInterval(interval);
             }
@@ -154,7 +154,7 @@ const App: React.FC = () => {
             if (progress >= 100) {
                 clearInterval(interval);
             }
-        }, 7000); // Update every 7 seconds to reach 75% in ~8.75 minutes
+        }, 7000); // Update every 7 seconds to reach 33% in ~3.85 minutes
     };
     
     const originalPrice = 1898;
@@ -217,6 +217,17 @@ const App: React.FC = () => {
                         {/* Transparent overlays to block UI elements without being visible */}
                         {videoPlaying && (
                             <>
+                                {/* Full overlay to block right-click and YouTube UI */}
+                                <div
+                                    className="absolute top-0 left-0 w-full h-full z-40"
+                                    style={{
+                                        background: 'transparent',
+                                        pointerEvents: 'auto',
+                                        cursor: 'default'
+                                    }}
+                                    onContextMenu={(e) => e.preventDefault()}
+                                />
+
                                 {/* Block channel name and avatar (top-left) - INVISIBLE */}
                                 <div
                                     className="absolute z-50"
@@ -229,6 +240,7 @@ const App: React.FC = () => {
                                         pointerEvents: 'auto',
                                         cursor: 'default'
                                     }}
+                                    onContextMenu={(e) => e.preventDefault()}
                                 />
 
                                 {/* Block Watch Later and Share buttons (top-right) - INVISIBLE */}
@@ -243,6 +255,7 @@ const App: React.FC = () => {
                                         pointerEvents: 'auto',
                                         cursor: 'default'
                                     }}
+                                    onContextMenu={(e) => e.preventDefault()}
                                 />
 
                                 {/* Block YouTube logo (bottom-right) - INVISIBLE */}
@@ -257,6 +270,7 @@ const App: React.FC = () => {
                                         pointerEvents: 'auto',
                                         cursor: 'default'
                                     }}
+                                    onContextMenu={(e) => e.preventDefault()}
                                 />
                             </>
                         )}
