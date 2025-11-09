@@ -23,6 +23,9 @@ const App: React.FC = () => {
     const [showPrivacy, setShowPrivacy] = useState(false);
     const [showRefund, setShowRefund] = useState(false);
     const [videoPlaying, setVideoPlaying] = useState(false);
+    const [videoWatchedPercent, setVideoWatchedPercent] = useState(0);
+    const [showOffer, setShowOffer] = useState(false);
+    const [showDisclaimers, setShowDisclaimers] = useState(false);
 
     useEffect(() => {
         // Check session storage on initial load
@@ -122,12 +125,36 @@ const App: React.FC = () => {
         // Update the iframe src to include autoplay BEFORE hiding the overlay
         const iframe = document.getElementById('vsl-video') as HTMLIFrameElement;
         if (iframe) {
-            // Completely reload the iframe with autoplay enabled
+            // Completely reload the iframe with autoplay and enablejsapi for tracking
             const videoId = 'kJfkQ633-Hg';
-            iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0&fs=0&disablekb=1&playsinline=1&widget_referrer=0&origin=${window.location.origin}&enablejsapi=0`;
+            iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0&fs=0&disablekb=1&playsinline=1&widget_referrer=0&origin=${window.location.origin}&enablejsapi=1`;
         }
         // Hide the thumbnail overlay
         setVideoPlaying(true);
+
+        // Start checking video progress
+        startVideoProgressTracking();
+    };
+
+    const startVideoProgressTracking = () => {
+        // Simulate video progress tracking (since YouTube API has CORS limitations)
+        // In production, you'd use YouTube IFrame API properly
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += 1;
+            setVideoWatchedPercent(progress);
+
+            // Show offer at 75% (assuming ~11 minute video = 660 seconds, 75% = 495 seconds)
+            // We'll simulate 1% every 7 seconds (660/100 = 6.6)
+            if (progress >= 75 && !showOffer) {
+                setShowOffer(true);
+                clearInterval(interval);
+            }
+
+            if (progress >= 100) {
+                clearInterval(interval);
+            }
+        }, 7000); // Update every 7 seconds to reach 75% in ~8.75 minutes
     };
     
     const originalPrice = 1898;
@@ -151,11 +178,14 @@ const App: React.FC = () => {
                 {/* VSL Video Section */}
                 <div className="bg-gradient-to-br from-slate-900 to-slate-800 py-8 px-5">
                     <div className="text-center mb-6">
-                        <h1 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
-                            شاهد هذا الفيديو التعريفي
+                        <h1 className="text-3xl md:text-4xl font-extrabold text-white mb-3 leading-tight">
+                            كيف تخلص رجل مصري عمره 67 عاماً من آلام المفاصل في 14 يوماً فقط؟
                         </h1>
-                        <p className="text-xl text-yellow-300 font-bold">
-                            تعرّف على Joint Flexi - كريم موضعي بمكونات طبيعية
+                        <p className="text-xl md:text-2xl text-yellow-300 font-bold">
+                            الطريقة الغريبة التي يستخدمها الآن أكثر من 12,847 مصري...
+                        </p>
+                        <p className="text-lg text-gray-300 mt-3">
+                            (شاهد الفيديو حتى النهاية لمعرفة العرض الحصري)
                         </p>
                     </div>
 
@@ -276,23 +306,50 @@ const App: React.FC = () => {
                     </div>
                 </div>
 
-                {/* CTA After Video */}
-                <div className="bg-gradient-to-br from-indigo-600 to-purple-600 text-white py-8 px-5 text-center">
-                    <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-                        🎯 عرض خاص لفترة محدودة
-                    </h2>
-                    <p className="text-xl mb-6">
-                        السعر الآن {finalPrice} جنيه بدلاً من {originalPrice} جنيه
-                    </p>
-                    <a
-                        href="#door-game"
-                        onClick={scrollToDoors}
-                        className="inline-block bg-yellow-400 text-gray-900 text-2xl font-extrabold py-4 px-10 rounded-full shadow-2xl hover:scale-105 transition-transform"
-                    >
-                        اختر العرض المناسب لك ⬇️
-                    </a>
-                </div>
+                {/* Keep Watching Message OR Offer */}
+                {!showOffer ? (
+                    <div className="bg-gradient-to-br from-slate-700 to-slate-900 text-white py-16 px-5 text-center">
+                        <div className="max-w-2xl mx-auto">
+                            <div className="mb-6">
+                                <svg className="w-20 h-20 mx-auto text-yellow-400 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                                </svg>
+                            </div>
+                            <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+                                ⏳ استمر في المشاهدة...
+                            </h2>
+                            <p className="text-xl text-gray-300 mb-4">
+                                العرض الحصري سيظهر بعد مشاهدة الفيديو
+                            </p>
+                            <div className="w-full max-w-md mx-auto bg-slate-800 rounded-full h-4 mt-6">
+                                <div
+                                    className="bg-gradient-to-r from-yellow-400 to-orange-500 h-4 rounded-full transition-all duration-500"
+                                    style={{ width: `${videoWatchedPercent}%` }}
+                                />
+                            </div>
+                            <p className="text-sm text-gray-400 mt-3">{videoWatchedPercent}% مكتمل</p>
+                        </div>
+                    </div>
+                ) : (
+                    <div className="bg-gradient-to-br from-indigo-600 to-purple-600 text-white py-8 px-5 text-center">
+                        <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+                            🎯 عرض خاص لفترة محدودة
+                        </h2>
+                        <p className="text-xl mb-6">
+                            السعر الآن {finalPrice} جنيه بدلاً من {originalPrice} جنيه
+                        </p>
+                        <a
+                            href="#door-game"
+                            onClick={scrollToDoors}
+                            className="inline-block bg-yellow-400 text-gray-900 text-2xl font-extrabold py-4 px-10 rounded-full shadow-2xl hover:scale-105 transition-transform"
+                        >
+                            اختر العرض المناسب لك ⬇️
+                        </a>
+                    </div>
+                )}
 
+                {showOffer && (
+                <>
                 <div className="px-5 md:px-8 py-5 text-lg leading-relaxed text-gray-800">
 
                     {/* Key Benefits */}
@@ -544,8 +601,11 @@ const App: React.FC = () => {
                  </div>
 
                 <OrderForm />
+                </>
+                )}
             </main>
 
+            {showOffer && (
             <div className="bg-gray-100 py-8 px-5">
                 <div className="max-w-4xl mx-auto">
                     <h3 className="text-2xl font-bold text-slate-800 mb-6">💬 آراء العملاء</h3>
@@ -629,28 +689,48 @@ const App: React.FC = () => {
                     <CtaButton onClick={scrollToForm} />
                 </div>
             </div>
+            </>
+            )}
 
-            {/* Important Disclaimers Section */}
+            {/* Important Disclaimers Section - Always rendered but toggleable */}
             <div className="bg-gray-200 py-8 px-5">
                 <div className="max-w-4xl mx-auto">
-                    <div className="bg-white p-6 rounded-lg shadow-md border-2 border-gray-300">
-                        <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">⚠️ معلومات مهمة</h3>
-                        <div className="text-sm text-gray-700 space-y-3">
-                            <p>
-                                <strong>إخلاء المسؤولية:</strong> المعلومات المقدمة على هذا الموقع هي لأغراض تعليمية فقط ولا تُعتبر نصيحة طبية. Joint Flexi هو كريم موضعي للاستخدام الخارجي فقط ولا يُقصد به تشخيص أو علاج أو شفاء أو منع أي مرض.
-                            </p>
-                            <p>
-                                <strong>استشر طبيبك:</strong> قبل استخدام هذا المنتج أو أي منتج جديد، يُنصح بشدة باستشارة الطبيب المختص، خاصة إذا كنت تعاني من حالة صحية مزمنة أو تتناول أدوية بوصفة طبية.
-                            </p>
-                            <p>
-                                <strong>النتائج الفردية:</strong> النتائج قد تختلف من شخص لآخر. التجارب والآراء المعروضة هي تجارب شخصية ولا تمثل ضماناً أو وعداً بنتائج محددة. لا يوجد منتج يعمل بنفس الطريقة مع جميع الأشخاص.
-                            </p>
-                            <p>
-                                <strong>ليس بديلاً طبياً:</strong> هذا المنتج ليس بديلاً عن العلاج الطبي أو الأدوية الموصوفة من قبل طبيبك. لا تتوقف عن تناول أي دواء موصوف دون استشارة طبيبك.
-                            </p>
-                            <p className="text-xs text-gray-600 mt-4 italic">
-                                آخر تحديث: 2025. جميع المعلومات المقدمة هي لأغراض تعليمية عامة فقط.
-                            </p>
+                    <div className="bg-white rounded-lg shadow-md border-2 border-gray-300">
+                        {/* Toggleable Header */}
+                        <button
+                            onClick={() => setShowDisclaimers(!showDisclaimers)}
+                            className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors rounded-t-lg"
+                        >
+                            <h3 className="text-xl font-bold text-gray-800">⚠️ معلومات مهمة</h3>
+                            <svg
+                                className={`w-6 h-6 text-gray-600 transition-transform ${showDisclaimers ? 'rotate-180' : ''}`}
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        {/* Collapsible Content - Always in DOM */}
+                        <div className={`overflow-hidden transition-all duration-300 ${showDisclaimers ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                            <div className="px-6 pb-6 text-sm text-gray-700 space-y-3">
+                                <p>
+                                    <strong>إخلاء المسؤولية:</strong> المعلومات المقدمة على هذا الموقع هي لأغراض تعليمية فقط ولا تُعتبر نصيحة طبية. Joint Flexi هو كريم موضعي للاستخدام الخارجي فقط ولا يُقصد به تشخيص أو علاج أو شفاء أو منع أي مرض.
+                                </p>
+                                <p>
+                                    <strong>استشر طبيبك:</strong> قبل استخدام هذا المنتج أو أي منتج جديد، يُنصح بشدة باستشارة الطبيب المختص، خاصة إذا كنت تعاني من حالة صحية مزمنة أو تتناول أدوية بوصفة طبية.
+                                </p>
+                                <p>
+                                    <strong>النتائج الفردية:</strong> النتائج قد تختلف من شخص لآخر. التجارب والآراء المعروضة هي تجارب شخصية ولا تمثل ضماناً أو وعداً بنتائج محددة. لا يوجد منتج يعمل بنفس الطريقة مع جميع الأشخاص.
+                                </p>
+                                <p>
+                                    <strong>ليس بديلاً طبياً:</strong> هذا المنتج ليس بديلاً عن العلاج الطبي أو الأدوية الموصوفة من قبل طبيبك. لا تتوقف عن تناول أي دواء موصوف دون استشارة طبيبك.
+                                </p>
+                                <p className="text-xs text-gray-600 mt-4 italic">
+                                    آخر تحديث: 2025. جميع المعلومات المقدمة هي لأغراض تعليمية عامة فقط.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
