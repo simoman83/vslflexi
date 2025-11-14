@@ -24,7 +24,7 @@ const FlexiAdvertorial: React.FC = () => {
     const [showRefund, setShowRefund] = useState(false);
     const [videoPlaying, setVideoPlaying] = useState(false);
     const [videoWatchedPercent, setVideoWatchedPercent] = useState(0);
-    const [showOffer, setShowOffer] = useState(false);
+    const [showOffer, setShowOffer] = useState(true);
     const [showDisclaimers, setShowDisclaimers] = useState(false);
 
     useEffect(() => {
