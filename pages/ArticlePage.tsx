@@ -218,4 +218,374 @@ export const NutritionArticle: React.FC = () => (
     />
 );
 
+export const BackPainArticle: React.FC = () => (
+    <ArticlePage
+        title="كيف تتجنب آلام الظهر أثناء العمل المكتبي"
+        category="صحة مهنية"
+        date="٢٠٢٥/١١/٠٥"
+        image="https://images.unsplash.com/photo-1593376893114-1aed528d80cf?w=800&q=80"
+        content={
+            <>
+                <p className="mb-4">
+                    العمل المكتبي لساعات طويلة يمكن أن يؤدي إلى آلام الظهر والرقبة. في هذا المقال، سنتعرف على أفضل الطرق لتجنب هذه الآلام والحفاظ على صحة ظهرك.
+                </p>
+
+                <h2 className="text-2xl font-bold mt-8 mb-4">أسباب آلام الظهر في العمل المكتبي</h2>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>الجلوس لفترات طويلة دون حركة</li>
+                    <li>وضعية الجلوس الخاطئة</li>
+                    <li>ارتفاع الشاشة أو الكرسي غير المناسب</li>
+                    <li>الإجهاد والتوتر</li>
+                    <li>قلة النشاط البدني</li>
+                </ul>
+
+                <h2 className="text-2xl font-bold mt-8 mb-4">نصائح لتجنب آلام الظهر</h2>
+
+                <h3 className="text-xl font-bold mt-6 mb-3">١. الوضعية الصحيحة للجلوس</h3>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>اجلس بظهر مستقيم مع دعم أسفل الظهر</li>
+                    <li>ضع قدميك بشكل مسطح على الأرض</li>
+                    <li>اجعل الشاشة على مستوى العين</li>
+                    <li>اجعل لوحة المفاتيح والماوس في متناول يدك بشكل مريح</li>
+                    <li>احرص على أن تكون ركبتاك بزاوية ٩٠ درجة</li>
+                </ul>
+
+                <h3 className="text-xl font-bold mt-6 mb-3">٢. استخدم كرسي مكتب مناسب</h3>
+                <p className="mb-4">
+                    استثمر في كرسي مكتب جيد يدعم منحنيات العمود الفقري الطبيعية. الكرسي المثالي يجب أن يكون:
+                </p>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>قابل للتعديل في الارتفاع</li>
+                    <li>يحتوي على دعم قطني (أسفل الظهر)</li>
+                    <li>ذو مساند أذرع قابلة للتعديل</li>
+                    <li>يسمح بالحركة والدوران بسهولة</li>
+                </ul>
+
+                <h3 className="text-xl font-bold mt-6 mb-3">٣. خذ فترات راحة منتظمة</h3>
+                <p className="mb-4">
+                    قاعدة ٢٠-٢٠-٢٠: كل ٢٠ دقيقة، خذ استراحة لمدة ٢٠ ثانية وانظر إلى شيء على بعد ٢٠ قدماً.
+                </p>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>قف وتحرك كل ٣٠-٦٠ دقيقة</li>
+                    <li>قم ببعض تمارين التمدد البسيطة</li>
+                    <li>امشِ قليلاً حول المكتب</li>
+                    <li>اشرب الماء لتشجيع نفسك على الحركة</li>
+                </ul>
+
+                <h3 className="text-xl font-bold mt-6 mb-3">٤. تمارين بسيطة للظهر في المكتب</h3>
+
+                <p className="mb-4"><strong>تمرين دوران الكتفين:</strong></p>
+                <p className="mb-4">قم بتدوير كتفيك للخلف ١٠ مرات، ثم للأمام ١٠ مرات. هذا يساعد على تخفيف التوتر.</p>
+
+                <p className="mb-4"><strong>تمرين تمدد الرقبة:</strong></p>
+                <p className="mb-4">أمِل رأسك برفق نحو كتفك الأيمن، ثم الأيسر. اثبت لمدة ١٥ ثانية في كل جانب.</p>
+
+                <p className="mb-4"><strong>تمرين التواء الجذع:</strong></p>
+                <p className="mb-4">اجلس مستقيماً والتف بجذعك إلى اليمين، امسك مسند الكرسي للدعم. اثبت ١٥ ثانية، ثم كرر على الجانب الأيسر.</p>
+
+                <h3 className="text-xl font-bold mt-6 mb-3">٥. ترتيب مكتب العمل</h3>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>ضع الشاشة على بعد ذراع واحد من وجهك</li>
+                    <li>استخدم حامل للكمبيوتر المحمول إذا لزم الأمر</li>
+                    <li>احتفظ بالأشياء المستخدمة بكثرة في متناول اليد</li>
+                    <li>استخدم سماعة رأس إذا كنت تجري الكثير من المكالمات</li>
+                </ul>
+
+                <div className="bg-yellow-50 border-r-4 border-yellow-500 p-6 my-8">
+                    <h3 className="font-bold text-lg mb-2">تنبيه مهم</h3>
+                    <p>
+                        إذا كنت تعاني من آلام مزمنة في الظهر، استشر طبيباً أو أخصائي علاج طبيعي. الألم المستمر قد يكون علامة على مشكلة صحية تحتاج إلى علاج متخصص.
+                    </p>
+                </div>
+
+                <h2 className="text-2xl font-bold mt-8 mb-4">نصائح إضافية</h2>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>مارس الرياضة بانتظام خارج ساعات العمل</li>
+                    <li>حافظ على وزن صحي لتقليل الضغط على الظهر</li>
+                    <li>تجنب حمل الحقائب الثقيلة على كتف واحد</li>
+                    <li>نم على مرتبة مناسبة تدعم ظهرك</li>
+                </ul>
+
+                <p className="mt-6">
+                    تذكر، الوقاية خير من العلاج! اتبع هذه النصائح البسيطة يومياً للحفاظ على ظهر صحي وخالٍ من الألم.
+                </p>
+            </>
+        }
+    />
+);
+
+export const WalkingBenefitsArticle: React.FC = () => (
+    <ArticlePage
+        title="فوائد المشي اليومي لصحة القلب والجسم"
+        category="نمط حياة صحي"
+        date="٢٠٢٥/١١/٠٣"
+        image="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80"
+        content={
+            <>
+                <p className="mb-4">
+                    المشي هو واحد من أبسط وأكثر التمارين فعالية التي يمكنك ممارستها. لا يتطلب معدات خاصة أو عضوية في صالة رياضية، ومع ذلك فوائده الصحية مذهلة!
+                </p>
+
+                <h2 className="text-2xl font-bold mt-8 mb-4">الفوائد الصحية للمشي اليومي</h2>
+
+                <h3 className="text-xl font-bold mt-6 mb-3">١. تحسين صحة القلب والأوعية الدموية</h3>
+                <p className="mb-4">
+                    المشي المنتظم يقوي القلب ويحسن الدورة الدموية:
+                </p>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>يخفض ضغط الدم المرتفع</li>
+                    <li>يقلل من خطر الإصابة بأمراض القلب بنسبة تصل إلى ٣٥٪</li>
+                    <li>يحسن مستويات الكوليسترول في الدم</li>
+                    <li>يقوي عضلة القلب</li>
+                    <li>يقلل من خطر السكتة الدماغية</li>
+                </ul>
+
+                <h3 className="text-xl font-bold mt-6 mb-3">٢. التحكم في الوزن وحرق السعرات</h3>
+                <p className="mb-4">
+                    المشي لمدة ٣٠ دقيقة يومياً يساعد في:
+                </p>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>حرق ما بين ١٥٠-٢٠٠ سعرة حرارية (حسب السرعة والوزن)</li>
+                    <li>تسريع عملية الأيض</li>
+                    <li>الحفاظ على كتلة العضلات</li>
+                    <li>تقليل الدهون في منطقة البطن</li>
+                </ul>
+
+                <h3 className="text-xl font-bold mt-6 mb-3">٣. تقوية العظام والعضلات</h3>
+                <p className="mb-4">
+                    المشي تمرين يحمل الوزن، مما يعني:
+                </p>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>زيادة كثافة العظام</li>
+                    <li>الوقاية من هشاشة العظام</li>
+                    <li>تقوية عضلات الساقين والبطن</li>
+                    <li>تحسين التوازن والتناسق</li>
+                </ul>
+
+                <h3 className="text-xl font-bold mt-6 mb-3">٤. تحسين الصحة النفسية</h3>
+                <p className="mb-4">
+                    المشي له تأثيرات إيجابية على الصحة العقلية:
+                </p>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>يقلل من التوتر والقلق</li>
+                    <li>يحسن المزاج من خلال إفراز هرمونات السعادة (الإندورفين)</li>
+                    <li>يساعد في علاج الاكتئاب الخفيف</li>
+                    <li>يحسن جودة النوم</li>
+                    <li>يزيد من التركيز والإنتاجية</li>
+                </ul>
+
+                <h3 className="text-xl font-bold mt-6 mb-3">٥. الوقاية من الأمراض المزمنة</h3>
+                <p className="mb-4">
+                    الأبحاث تظهر أن المشي المنتظم يقلل من خطر:
+                </p>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>مرض السكري من النوع الثاني بنسبة ٦٠٪</li>
+                    <li>بعض أنواع السرطان (القولون، الثدي)</li>
+                    <li>الخرف ومرض الزهايمر</li>
+                    <li>التهاب المفاصل</li>
+                </ul>
+
+                <h2 className="text-2xl font-bold mt-8 mb-4">كيف تبدأ روتين المشي اليومي</h2>
+
+                <h3 className="text-xl font-bold mt-6 mb-3">للمبتدئين:</h3>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>ابدأ بـ ١٠-١٥ دقيقة يومياً</li>
+                    <li>زد المدة تدريجياً كل أسبوع</li>
+                    <li>اختر وقتاً ثابتاً يومياً (صباحاً أو مساءً)</li>
+                    <li>ارتدِ أحذية مريحة ومناسبة للمشي</li>
+                </ul>
+
+                <h3 className="text-xl font-bold mt-6 mb-3">الهدف المثالي:</h3>
+                <p className="mb-4">
+                    توصي منظمة الصحة العالمية بـ:
+                </p>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>٣٠ دقيقة على الأقل، ٥ أيام في الأسبوع</li>
+                    <li>أو ١٠,٠٠٠ خطوة يومياً</li>
+                    <li>يمكن تقسيمها إلى جلسات قصيرة (١٠ دقائق × ٣ مرات)</li>
+                </ul>
+
+                <h3 className="text-xl font-bold mt-6 mb-3">نصائح لجعل المشي أكثر متعة:</h3>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>استمع إلى الموسيقى أو البودكاست</li>
+                    <li>امشِ مع صديق أو أحد أفراد العائلة</li>
+                    <li>استكشف طرق ومناطق جديدة</li>
+                    <li>انضم إلى مجموعة مشي في منطقتك</li>
+                    <li>استخدم تطبيقات تتبع الخطوات للتحفيز</li>
+                </ul>
+
+                <div className="bg-blue-50 border-r-4 border-blue-500 p-6 my-8">
+                    <h3 className="font-bold text-lg mb-2">نصيحة ذهبية</h3>
+                    <p>
+                        أفضل وقت للمشي هو الوقت الذي تلتزم به! سواء كان صباحاً أو مساءً، الأهم هو الاستمرارية. اجعل المشي عادة يومية مثل تنظيف أسنانك.
+                    </p>
+                </div>
+
+                <h2 className="text-2xl font-bold mt-8 mb-4">نصائح للسلامة</h2>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>ابدأ بالإحماء وانتهِ بالتهدئة</li>
+                    <li>اشرب الماء قبل وبعد المشي</li>
+                    <li>استخدم واقي الشمس في النهار</li>
+                    <li>ارتدِ ملابس مريحة وعاكسة للضوء إذا كنت تمشي ليلاً</li>
+                    <li>انتبه لإشارات جسمك وتوقف إذا شعرت بألم</li>
+                </ul>
+
+                <p className="mt-6">
+                    المشي هو استثمار بسيط في صحتك يحقق عوائد كبيرة. ابدأ اليوم، ولو بخطوات قليلة، وستلاحظ الفرق!
+                </p>
+            </>
+        }
+    />
+);
+
+export const SleepTipsArticle: React.FC = () => (
+    <ArticlePage
+        title="النوم الصحي: كيف تحسن جودة نومك بطرق طبيعية"
+        category="صحة عامة"
+        date="٢٠٢٥/١١/٠١"
+        image="https://images.unsplash.com/photo-1541480601022-2308c0f02487?w=800&q=80"
+        content={
+            <>
+                <p className="mb-4">
+                    النوم الجيد ضروري للصحة الجسدية والنفسية. في هذا المقال، سنستعرض طرقاً طبيعية وفعالة لتحسين جودة نومك والاستيقاظ منتعشاً ونشيطاً.
+                </p>
+
+                <h2 className="text-2xl font-bold mt-8 mb-4">لماذا النوم الجيد مهم؟</h2>
+                <p className="mb-4">
+                    النوم الكافي والجودة العالية له فوائد عديدة:
+                </p>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>يقوي جهاز المناعة</li>
+                    <li>يحسن الذاكرة والتركيز</li>
+                    <li>يساعد في التحكم بالوزن</li>
+                    <li>يقلل من خطر الأمراض المزمنة</li>
+                    <li>يحسن المزاج والصحة النفسية</li>
+                    <li>يزيد الطاقة والإنتاجية</li>
+                </ul>
+
+                <h2 className="text-2xl font-bold mt-8 mb-4">كم ساعة نوم تحتاج؟</h2>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>البالغون (١٨-٦٤ سنة): ٧-٩ ساعات</li>
+                    <li>كبار السن (٦٥+ سنة): ٧-٨ ساعات</li>
+                    <li>المراهقون: ٨-١٠ ساعات</li>
+                    <li>الأطفال: ٩-١٣ ساعة حسب العمر</li>
+                </ul>
+
+                <h2 className="text-2xl font-bold mt-8 mb-4">طرق طبيعية لتحسين جودة النوم</h2>
+
+                <h3 className="text-xl font-bold mt-6 mb-3">١. التزم بجدول نوم منتظم</h3>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>اذهب للنوم واستيقظ في نفس الوقت يومياً</li>
+                    <li>حتى في عطلات نهاية الأسبوع</li>
+                    <li>هذا يساعد في ضبط الساعة البيولوجية لجسمك</li>
+                    <li>تجنب القيلولة الطويلة نهاراً (لا تزيد عن ٣٠ دقيقة)</li>
+                </ul>
+
+                <h3 className="text-xl font-bold mt-6 mb-3">٢. اخلق بيئة نوم مثالية</h3>
+                <p className="mb-4"><strong>الغرفة المظلمة:</strong></p>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>استخدم ستائر معتمة</li>
+                    <li>أطفئ جميع الأضواء والشاشات</li>
+                    <li>استخدم قناع العين إذا لزم الأمر</li>
+                </ul>
+
+                <p className="mb-4"><strong>درجة الحرارة المناسبة:</strong></p>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>احتفظ بغرفة النوم باردة (١٦-١٩ درجة مئوية)</li>
+                    <li>استخدم بطانية مريحة</li>
+                </ul>
+
+                <p className="mb-4"><strong>الهدوء:</strong></p>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>استخدم سدادات الأذن إذا كانت البيئة صاخبة</li>
+                    <li>جرب أصوات الطبيعة أو الضوضاء البيضاء</li>
+                </ul>
+
+                <h3 className="text-xl font-bold mt-6 mb-3">٣. تجنب المنبهات قبل النوم</h3>
+                <p className="mb-4"><strong>الكافيين:</strong></p>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>تجنب القهوة والشاي بعد الظهر</li>
+                    <li>الكافيين يبقى في الجسم لمدة ٦-٨ ساعات</li>
+                    <li>انتبه للمصادر الخفية (الشوكولاتة، بعض الأدوية)</li>
+                </ul>
+
+                <p className="mb-4"><strong>الشاشات:</strong></p>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>أطفئ الهاتف والتلفاز قبل النوم بساعة على الأقل</li>
+                    <li>الضوء الأزرق من الشاشات يثبط إفراز الميلاتونين (هرمون النوم)</li>
+                    <li>استخدم فلتر الضوء الأزرق أو النظارات المخصصة إذا اضطررت</li>
+                </ul>
+
+                <h3 className="text-xl font-bold mt-6 mb-3">٤. مارس الرياضة بانتظام</h3>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>التمارين المنتظمة تحسن جودة النوم</li>
+                    <li>تجنب التمارين القوية قبل النوم بـ ٣ ساعات</li>
+                    <li>المشي اليومي يمكن أن يحسن النوم بشكل ملحوظ</li>
+                </ul>
+
+                <h3 className="text-xl font-bold mt-6 mb-3">٥. راقب ما تأكله وتشربه</h3>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>تجنب الوجبات الثقيلة قبل النوم بـ ٢-٣ ساعات</li>
+                    <li>لا تذهب للنوم جائعاً أو ممتلئاً جداً</li>
+                    <li>قلل من السوائل في المساء لتجنب الاستيقاظ ليلاً</li>
+                    <li>تجنب الكحول - قد يساعدك على النوم لكنه يقلل من جودته</li>
+                </ul>
+
+                <h3 className="text-xl font-bold mt-6 mb-3">٦. طور روتين استرخاء ليلي</h3>
+                <p className="mb-4">
+                    أنشئ طقوساً مهدئة قبل النوم:
+                </p>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>اقرأ كتاباً (ورقي وليس إلكتروني)</li>
+                    <li>خذ حماماً دافئاً</li>
+                    <li>مارس تمارين التنفس العميق</li>
+                    <li>استمع لموسيقى هادئة</li>
+                    <li>جرب التأمل أو اليوغا الخفيفة</li>
+                </ul>
+
+                <h3 className="text-xl font-bold mt-6 mb-3">٧. إدارة التوتر والقلق</h3>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>اكتب قائمة بمهام الغد قبل النوم لتفريغ عقلك</li>
+                    <li>مارس تقنيات الاسترخاء</li>
+                    <li>تجنب التفكير في المشاكل وأنت في السرير</li>
+                    <li>استخدم تقنية "٤-٧-٨" للتنفس: شهيق ٤ ثوانٍ، احبس ٧ ثوانٍ، زفير ٨ ثوانٍ</li>
+                </ul>
+
+                <h2 className="text-2xl font-bold mt-8 mb-4">أطعمة تساعد على النوم</h2>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>الموز (غني بالمغنيسيوم والبوتاسيوم)</li>
+                    <li>اللوز والجوز (يحتوي على الميلاتونين)</li>
+                    <li>الحليب الدافئ (يحتوي على التريبتوفان)</li>
+                    <li>البابونج (شاي مهدئ)</li>
+                    <li>الكرز (مصدر طبيعي للميلاتونين)</li>
+                    <li>الشوفان (يحفز إنتاج الميلاتونين)</li>
+                </ul>
+
+                <div className="bg-red-50 border-r-4 border-red-500 p-6 my-8">
+                    <h3 className="font-bold text-lg mb-2">متى تستشير الطبيب؟</h3>
+                    <p className="mb-2">استشر طبيبك إذا:</p>
+                    <ul className="list-disc list-inside space-y-1">
+                        <li>استمرت مشاكل النوم لأكثر من شهر</li>
+                        <li>تشخر بصوت عالٍ أو تتوقف عن التنفس أثناء النوم</li>
+                        <li>تشعر بالنعاس المفرط نهاراً</li>
+                        <li>تعاني من ألم أو حركات غير طبيعية أثناء النوم</li>
+                    </ul>
+                </div>
+
+                <h2 className="text-2xl font-bold mt-8 mb-4">عادات يجب تجنبها</h2>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                    <li>استخدام السرير للعمل أو مشاهدة التلفاز</li>
+                    <li>النظر إلى الساعة باستمرار إذا لم تستطع النوم</li>
+                    <li>الاستلقاء في السرير وأنت مستيقظ لأكثر من ٢٠ دقيقة (قم وافعل شيئاً مريحاً)</li>
+                    <li>الاعتماد على الحبوب المنومة دون استشارة طبية</li>
+                </ul>
+
+                <p className="mt-6">
+                    النوم الجيد هو أحد أركان الصحة الثلاثة (مع التغذية والرياضة). استثمر في نومك، واستثمر في صحتك!
+                </p>
+            </>
+        }
+    />
+);
+
 export default ArticlePage;

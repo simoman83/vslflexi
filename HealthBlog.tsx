@@ -37,7 +37,7 @@ const HealthBlog: React.FC = () => {
             category: "صحة مهنية",
             date: "٢٠٢٥/١١/٠٥",
             image: "https://images.unsplash.com/photo-1593376893114-1aed528d80cf?w=800&q=80",
-            link: "/about"
+            link: "/article/back-pain"
         },
         {
             id: 5,
@@ -46,7 +46,7 @@ const HealthBlog: React.FC = () => {
             category: "نمط حياة صحي",
             date: "٢٠٢٥/١١/٠٣",
             image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80",
-            link: "/about"
+            link: "/article/walking-benefits"
         },
         {
             id: 6,
@@ -55,7 +55,7 @@ const HealthBlog: React.FC = () => {
             category: "صحة عامة",
             date: "٢٠٢٥/١١/٠١",
             image: "https://images.unsplash.com/photo-1541480601022-2308c0f02487?w=800&q=80",
-            link: "/about"
+            link: "/article/sleep-tips"
         }
     ];
 
