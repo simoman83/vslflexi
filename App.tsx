@@ -179,13 +179,13 @@ const App: React.FC = () => {
                 <div className="bg-gradient-to-br from-slate-900 to-slate-800 py-8 px-5">
                     <div className="text-center mb-6">
                         <h1 className="text-3xl md:text-4xl font-extrabold text-white mb-3 leading-tight">
-                            اكتشف الطريقة الطبيعية التي يستخدمها المصريون للراحة اليومية
+                            اكتشاف طبي يساعد المصريين على دعم راحة المفاصل بشكل طبيعي
                         </h1>
                         <p className="text-xl md:text-2xl text-yellow-300 font-bold">
-                            كريم موضعي بمكونات طبيعية قد يساعد في دعم راحة المفاصل
+                            آلاف جربوه... والنتائج كانت مذهلة (تعرف على السر)
                         </p>
                         <p className="text-lg text-gray-300 mt-3">
-                            (شاهد الفيديو حتى النهاية لمعرفة العرض الحصري)
+                            (شاهد الفيديو حتى النهاية لمعرفة التفاصيل والعرض الخاص)
                         </p>
                     </div>
 
