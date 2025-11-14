@@ -18,7 +18,8 @@ const HealthBlog: React.FC = () => {
             excerpt: "تمارين بسيطة يمكنك ممارستها في المنزل لتقوية عضلات الركبة وتحسين مرونة المفاصل...",
             category: "تمارين رياضية",
             date: "٢٠٢٥/١١/١٠",
-            image: "https://images.unsplash.com/photo-1540206395-68808572332f?w=800&q=80"
+            image: "https://images.unsplash.com/photo-1540206395-68808572332f?w=800&q=80",
+            link: "/article/knee-exercises"
         },
         {
             id: 3,
@@ -26,7 +27,8 @@ const HealthBlog: React.FC = () => {
             excerpt: "اكتشف الأطعمة الغنية بالكالسيوم وفيتامين د التي تدعم صحة عظامك ومفاصلك بشكل طبيعي...",
             category: "تغذية",
             date: "٢٠٢٥/١١/٠٨",
-            image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80"
+            image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80",
+            link: "/article/nutrition"
         },
         {
             id: 4,
@@ -70,10 +72,10 @@ const HealthBlog: React.FC = () => {
                             </div>
                         </div>
                         <nav className="hidden md:flex gap-6">
-                            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">الرئيسية</a>
-                            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">المقالات</a>
-                            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">نصائح صحية</a>
-                            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">اتصل بنا</a>
+                            <Link to="/" className="text-gray-700 hover:text-blue-600 font-medium">الرئيسية</Link>
+                            <Link to="/" className="text-gray-700 hover:text-blue-600 font-medium">المقالات</Link>
+                            <Link to="/about" className="text-gray-700 hover:text-blue-600 font-medium">عن الموقع</Link>
+                            <Link to="/contact" className="text-gray-700 hover:text-blue-600 font-medium">اتصل بنا</Link>
                         </nav>
                     </div>
                 </div>
@@ -191,10 +193,10 @@ const HealthBlog: React.FC = () => {
                         <div>
                             <h4 className="text-xl font-bold mb-4">روابط سريعة</h4>
                             <ul className="space-y-2 text-gray-400">
-                                <li><a href="#" className="hover:text-white">عن الموقع</a></li>
-                                <li><a href="#" className="hover:text-white">سياسة الخصوصية</a></li>
-                                <li><a href="#" className="hover:text-white">شروط الاستخدام</a></li>
-                                <li><a href="#" className="hover:text-white">اتصل بنا</a></li>
+                                <li><Link to="/about" className="hover:text-white">عن الموقع</Link></li>
+                                <li><Link to="/privacy" className="hover:text-white">سياسة الخصوصية</Link></li>
+                                <li><Link to="/terms" className="hover:text-white">شروط الاستخدام</Link></li>
+                                <li><Link to="/contact" className="hover:text-white">اتصل بنا</Link></li>
                             </ul>
                         </div>
                         <div>
