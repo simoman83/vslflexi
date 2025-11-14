@@ -91,10 +91,11 @@ const ContactPage: React.FC = () => {
                                 <div>
                                     <h3 className="font-bold text-lg mb-1">تابعنا</h3>
                                     <div className="flex gap-3 mt-2">
-                                        <a href="#" className="text-2xl hover:opacity-70">📘</a>
-                                        <a href="#" className="text-2xl hover:opacity-70">📷</a>
-                                        <a href="#" className="text-2xl hover:opacity-70">🐦</a>
+                                        <span className="text-2xl opacity-50">📘</span>
+                                        <span className="text-2xl opacity-50">📷</span>
+                                        <span className="text-2xl opacity-50">🐦</span>
                                     </div>
+                                    <p className="text-xs text-gray-500 mt-1">قريباً</p>
                                 </div>
                             </div>
                         </div>

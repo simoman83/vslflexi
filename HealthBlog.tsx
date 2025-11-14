@@ -36,7 +36,8 @@ const HealthBlog: React.FC = () => {
             excerpt: "نصائح عملية وتمارين بسيطة يمكن القيام بها أثناء العمل للوقاية من آلام الظهر والرقبة...",
             category: "صحة مهنية",
             date: "٢٠٢٥/١١/٠٥",
-            image: "https://images.unsplash.com/photo-1593376893114-1aed528d80cf?w=800&q=80"
+            image: "https://images.unsplash.com/photo-1593376893114-1aed528d80cf?w=800&q=80",
+            link: "/about"
         },
         {
             id: 5,
@@ -44,7 +45,8 @@ const HealthBlog: React.FC = () => {
             excerpt: "المشي لمدة ٣٠ دقيقة يومياً قد يحسن صحتك بشكل كبير. تعرف على الفوائد المذهلة...",
             category: "نمط حياة صحي",
             date: "٢٠٢٥/١١/٠٣",
-            image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80"
+            image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80",
+            link: "/about"
         },
         {
             id: 6,
@@ -52,7 +54,8 @@ const HealthBlog: React.FC = () => {
             excerpt: "تعرف على أسرار النوم العميق وكيف يؤثر النوم الجيد على صحتك العامة ونشاطك اليومي...",
             category: "صحة عامة",
             date: "٢٠٢٥/١١/٠١",
-            image: "https://images.unsplash.com/photo-1541480601022-2308c0f02487?w=800&q=80"
+            image: "https://images.unsplash.com/photo-1541480601022-2308c0f02487?w=800&q=80",
+            link: "/about"
         }
     ];
 
@@ -93,14 +96,15 @@ const HealthBlog: React.FC = () => {
 
             {/* Categories */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <h3 className="text-center text-xl font-bold text-gray-700 mb-4">التصنيفات</h3>
                 <div className="flex flex-wrap gap-3 justify-center">
                     {categories.map((cat, idx) => (
-                        <button
+                        <span
                             key={idx}
-                            className="px-5 py-2 bg-white text-gray-700 rounded-full shadow-sm hover:shadow-md hover:bg-blue-50 transition-all border border-gray-200 font-medium"
+                            className="px-5 py-2 bg-white text-gray-700 rounded-full shadow-sm border border-gray-200 font-medium"
                         >
                             {cat}
-                        </button>
+                        </span>
                     ))}
                 </div>
             </div>
@@ -130,21 +134,12 @@ const HealthBlog: React.FC = () => {
                                 <p className="text-gray-600 mb-4 leading-relaxed">
                                     {article.excerpt}
                                 </p>
-                                {article.link ? (
-                                    <Link
-                                        to={article.link}
-                                        className="inline-block text-blue-600 hover:text-blue-800 font-semibold"
-                                    >
-                                        اقرأ المزيد ←
-                                    </Link>
-                                ) : (
-                                    <a
-                                        href="#"
-                                        className="inline-block text-blue-600 hover:text-blue-800 font-semibold"
-                                    >
-                                        اقرأ المزيد ←
-                                    </a>
-                                )}
+                                <Link
+                                    to={article.link}
+                                    className="inline-block text-blue-600 hover:text-blue-800 font-semibold"
+                                >
+                                    اقرأ المزيد ←
+                                </Link>
                             </div>
                         </article>
                     ))}
@@ -205,10 +200,11 @@ const HealthBlog: React.FC = () => {
                                 تابعنا على وسائل التواصل الاجتماعي للحصول على آخر التحديثات
                             </p>
                             <div className="flex gap-4">
-                                <a href="#" className="text-2xl hover:text-blue-400">📘</a>
-                                <a href="#" className="text-2xl hover:text-blue-400">📷</a>
-                                <a href="#" className="text-2xl hover:text-blue-400">🐦</a>
+                                <span className="text-2xl opacity-50">📘</span>
+                                <span className="text-2xl opacity-50">📷</span>
+                                <span className="text-2xl opacity-50">🐦</span>
                             </div>
+                            <p className="text-xs text-gray-500 mt-2">قريباً</p>
                         </div>
                     </div>
                     <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
