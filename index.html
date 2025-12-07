@@ -1,176 +1,208 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>اكتشاف طبي جديد يساعد المصريين على التخلص من آلام المفاصل</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17686700281"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'AW-17686700281');
-</script>
-    <style>
-      body {
-        font-family: 'Cairo', 'Tahoma', sans-serif;
-      }
-      body.modal-open {
-        overflow: hidden;
-      }
-      /* Simple Door Animation */
-      .door-container {
-        perspective: 1000px;
-        position: relative;
-        cursor: pointer;
-        border-radius: 0.5rem;
-        overflow: hidden;
-      }
-      
-      .door-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.8s ease-in-out;
-        transform-style: preserve-3d;
-      }
-      
-      .door-inner.is-flipped {
-        transform: rotateY(180deg);
-      }
-      
-      .door-front,
-      .door-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        border-radius: 0.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      }
-      
-      .door-front {
-        background: linear-gradient(145deg, #4f46e5, #7c3aed);
-        border: 3px solid #3730a3;
-        color: white;
-        z-index: 2;
-      }
-      
-      .door-back {
-        background: linear-gradient(145deg, #ec4899, #ef4444);
-        border: 3px solid #be185d;
-        transform: rotateY(180deg);
-        color: white;
-      }
-      
-      .door-emoji {
-        font-size: clamp(3rem, 12vw, 6rem);
-        line-height: 1;
-        margin-bottom: 0.5rem;
-        filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
-      }
-      
-      .door-text {
-        font-weight: bold;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        font-size: 1rem;
-      }
-      
-      .reward-text {
-        font-size: clamp(2rem, 8vw, 4rem);
-        font-weight: 900;
-        animation: pulse 1.5s infinite;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        margin-bottom: 0.5rem;
-        color: #fbbf24;
-      }
-      
-      .reward-label {
-        font-size: 1.2rem;
-        font-weight: bold;
-        opacity: 0.9;
-        color: #fbbf24;
-      }
-      
-      @keyframes pulse {
-        0%, 100% { 
-          transform: scale(1);
-          filter: brightness(1);
-        }
-        50% { 
-          transform: scale(1.1);
-          filter: brightness(1.2);
-        }
-      }
-      /* Pop-in Animation */
-      @keyframes pop-in {
-        0% {
-          opacity: 0;
-          transform: scale(0.8) translateY(20px);
-        }
-        100% {
-          opacity: 1;
-          transform: scale(1) translateY(0);
-        }
-      }
-      .animate-pop-in {
-          animation: pop-in 0.5s ease-out forwards;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>اكتشاف طبي جديد يساعد المصريين على التخلص من آلام المفاصل</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17686700281"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'AW-17686700281');
+  </script>
+  <style>
+    body {
+      font-family: 'Cairo', 'Tahoma', sans-serif;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    /* Simple Door Animation */
+    .door-container {
+      perspective: 1000px;
+      position: relative;
+      cursor: pointer;
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+
+    .door-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s ease-in-out;
+      transform-style: preserve-3d;
+    }
+
+    .door-inner.is-flipped {
+      transform: rotateY(180deg);
+    }
+
+    .door-front,
+    .door-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .door-front {
+      background: linear-gradient(145deg, #4f46e5, #7c3aed);
+      border: 3px solid #3730a3;
+      color: white;
+      z-index: 2;
+    }
+
+    .door-back {
+      background: linear-gradient(145deg, #ec4899, #ef4444);
+      border: 3px solid #be185d;
+      transform: rotateY(180deg);
+      color: white;
+    }
+
+    .door-emoji {
+      font-size: clamp(3rem, 12vw, 6rem);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+    }
+
+    .door-text {
+      font-weight: bold;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      font-size: 1rem;
+    }
+
+    .reward-text {
+      font-size: clamp(2rem, 8vw, 4rem);
+      font-weight: 900;
+      animation: pulse 1.5s infinite;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      margin-bottom: 0.5rem;
+      color: #fbbf24;
+    }
+
+    .reward-label {
+      font-size: 1.2rem;
+      font-weight: bold;
+      opacity: 0.9;
+      color: #fbbf24;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        filter: brightness(1);
       }
 
-      /* Hide all YouTube UI elements */
-      iframe {
-        pointer-events: auto;
+      50% {
+        transform: scale(1.1);
+        filter: brightness(1.2);
+      }
+    }
+
+    /* Pop-in Animation */
+    @keyframes pop-in {
+      0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
       }
 
-      /* Hide YouTube branding, controls, and UI elements */
-      .ytp-chrome-top,
-      .ytp-chrome-bottom,
-      .ytp-gradient-top,
-      .ytp-gradient-bottom,
-      .ytp-show-cards-title,
-      .ytp-title,
-      .ytp-title-text,
-      .ytp-chrome-controls,
-      .ytp-watch-later-button,
-      .ytp-share-button,
-      .ytp-watermark,
-      .ytp-pause-overlay,
-      .ytp-scroll-min,
-      .ytp-player-content,
-      .ytp-cards-teaser,
-      .ytp-ce-element,
-      .ytp-cards-button,
-      .ytp-end-screen-content,
-      .ytp-show-tiles,
-      .ytp-suggested-action,
-      .ytp-endscreen-content,
-      .ytp-info,
-      .ytp-overflow-panel,
-      .ytp-title-channel,
-      .ytp-channel-name {
-        display: none !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    .animate-pop-in {
+      animation: pop-in 0.5s ease-out forwards;
+    }
+
+    /* Wiggle animation for unmute button */
+    @keyframes wiggle {
+
+      0%,
+      100% {
+        transform: rotate(0deg) scale(1);
       }
 
-      /* Additional CSS to hide YouTube UI using iframe styling */
-      #vsl-video {
-        clip-path: inset(0px 0px 0px 0px);
+      25% {
+        transform: rotate(-3deg) scale(1.02);
       }
-    </style>
-  </head>
-  <body class="bg-gray-100">
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+
+      50% {
+        transform: rotate(0deg) scale(1);
+      }
+
+      75% {
+        transform: rotate(3deg) scale(1.02);
+      }
+    }
+
+    /* Hide all YouTube UI elements */
+    iframe {
+      pointer-events: auto;
+    }
+
+    /* Hide YouTube branding, controls, and UI elements */
+    .ytp-chrome-top,
+    .ytp-chrome-bottom,
+    .ytp-gradient-top,
+    .ytp-gradient-bottom,
+    .ytp-show-cards-title,
+    .ytp-title,
+    .ytp-title-text,
+    .ytp-chrome-controls,
+    .ytp-watch-later-button,
+    .ytp-share-button,
+    .ytp-watermark,
+    .ytp-pause-overlay,
+    .ytp-scroll-min,
+    .ytp-player-content,
+    .ytp-cards-teaser,
+    .ytp-ce-element,
+    .ytp-cards-button,
+    .ytp-end-screen-content,
+    .ytp-show-tiles,
+    .ytp-suggested-action,
+    .ytp-endscreen-content,
+    .ytp-info,
+    .ytp-overflow-panel,
+    .ytp-title-channel,
+    .ytp-channel-name {
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+    }
+
+    /* Additional CSS to hide YouTube UI using iframe styling */
+    #vsl-video {
+      clip-path: inset(0px 0px 0px 0px);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
 </html>

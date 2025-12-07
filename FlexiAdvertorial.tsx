@@ -310,18 +310,18 @@ const FlexiAdvertorial: React.FC = () => {
                         {/* Unmute Overlay - Positioned at top for better visibility */}
                         {videoPlaying && isMuted && (
                             <div
-                                className="absolute top-4 left-0 right-0 z-50 flex justify-center cursor-pointer"
+                                className="absolute top-2 md:top-4 left-0 right-0 z-50 flex justify-center cursor-pointer px-2"
                                 onClick={handleUnmute}
                             >
-                                <div className="bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-5 rounded-2xl flex items-center gap-4 shadow-2xl hover:from-red-700 hover:to-red-800 transition-all transform hover:scale-105 border-4 border-white animate-bounce">
-                                    <div className="bg-white rounded-full p-2 animate-pulse">
-                                        <svg className="w-10 h-10 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                                <div className="bg-gradient-to-r from-red-600 to-red-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-xl flex items-center gap-2 md:gap-3 shadow-xl hover:from-red-700 hover:to-red-800 transition-all transform hover:scale-105 border-2 border-white animate-[wiggle_1s_ease-in-out_infinite]"
+                                    style={{ animation: 'wiggle 1s ease-in-out infinite' }}>
+                                    <div className="bg-white rounded-full p-1.5 md:p-2">
+                                        <svg className="w-5 h-5 md:w-7 md:h-7 text-red-600" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
                                         </svg>
                                     </div>
                                     <div className="text-right">
-                                        <p className="text-2xl font-black">🔊 انقر هنا لتشغيل الصوت</p>
-                                        <p className="text-sm opacity-90">اضغط لسماع الفيديو</p>
+                                        <p className="text-sm md:text-lg font-bold">🔊 انقر لتشغيل الصوت</p>
                                     </div>
                                 </div>
                             </div>
