@@ -313,8 +313,8 @@ const FlexiAdvertorial: React.FC = () => {
                                 className="absolute top-4 left-0 right-0 z-50 flex justify-center cursor-pointer"
                                 onClick={handleUnmute}
                             >
-                                <div className="bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-5 rounded-2xl flex items-center gap-4 shadow-2xl hover:from-red-700 hover:to-red-800 transition-all transform hover:scale-105 border-4 border-white">
-                                    <div className="bg-white rounded-full p-2">
+                                <div className="bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-5 rounded-2xl flex items-center gap-4 shadow-2xl hover:from-red-700 hover:to-red-800 transition-all transform hover:scale-105 border-4 border-white animate-bounce">
+                                    <div className="bg-white rounded-full p-2 animate-pulse">
                                         <svg className="w-10 h-10 text-red-600" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
                                         </svg>
