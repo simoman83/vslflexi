@@ -146,14 +146,21 @@ const FlexiAdvertorial: React.FC = () => {
     const handleUnmute = () => {
         const iframe = document.getElementById('vsl-video') as HTMLIFrameElement;
         if (iframe && iframe.contentWindow) {
-            // Use YouTube IFrame API postMessage to unmute without restarting
-            const message = JSON.stringify({
+            // First, play the video (needed for iOS)
+            const playMessage = JSON.stringify({
+                event: 'command',
+                func: 'playVideo'
+            });
+            iframe.contentWindow.postMessage(playMessage, '*');
+
+            // Then unmute
+            const unmuteMessage = JSON.stringify({
                 event: 'command',
                 func: 'unMute'
             });
-            iframe.contentWindow.postMessage(message, '*');
+            iframe.contentWindow.postMessage(unmuteMessage, '*');
 
-            // Also try setting volume as backup
+            // Also set volume as backup
             const volumeMessage = JSON.stringify({
                 event: 'command',
                 func: 'setVolume',
@@ -264,10 +271,10 @@ const FlexiAdvertorial: React.FC = () => {
                                 <div
                                     className="absolute z-50"
                                     style={{
-                                        top: '10px',
-                                        right: '10px',
-                                        width: '150px',
-                                        height: '50px',
+                                        top: '0px',
+                                        right: '0px',
+                                        width: '200px',
+                                        height: '80px',
                                         background: 'transparent',
                                         pointerEvents: 'auto',
                                         cursor: 'default'
@@ -282,7 +289,7 @@ const FlexiAdvertorial: React.FC = () => {
                                         bottom: '0px',
                                         right: '0px',
                                         left: '0px',
-                                        height: '80px',
+                                        height: '100px',
                                         background: 'transparent',
                                         pointerEvents: 'auto',
                                         cursor: 'default'
