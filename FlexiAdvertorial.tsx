@@ -151,7 +151,7 @@ const FlexiAdvertorial: React.FC = () => {
                 event: 'command',
                 func: 'unMute'
             });
-            iframe.contentWindow.postMessage(message, 'https://www.youtube-nocookie.com');
+            iframe.contentWindow.postMessage(message, '*');
 
             // Also try setting volume as backup
             const volumeMessage = JSON.stringify({
@@ -159,7 +159,7 @@ const FlexiAdvertorial: React.FC = () => {
                 func: 'setVolume',
                 args: [100]
             });
-            iframe.contentWindow.postMessage(volumeMessage, 'https://www.youtube-nocookie.com');
+            iframe.contentWindow.postMessage(volumeMessage, '*');
 
             setIsMuted(false);
         }
@@ -235,10 +235,9 @@ const FlexiAdvertorial: React.FC = () => {
                                 height: '100%',
                                 border: 'none'
                             }}
-                            src="https://www.youtube-nocookie.com/embed/kJfkQ633-Hg?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0&fs=0&disablekb=1&playsinline=1&widget_referrer=0&origin=https://yoursite.com&enablejsapi=1"
+                            src={`https://www.youtube.com/embed/kJfkQ633-Hg?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0&fs=0&disablekb=1&playsinline=1&widget_referrer=0&origin=${typeof window !== 'undefined' ? window.location.origin : ''}&enablejsapi=1`}
                             title="Joint Flexi Video Sales Letter"
                             frameBorder="0"
-                            sandbox="allow-scripts allow-same-origin allow-presentation"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             referrerPolicy="strict-origin-when-cross-origin"
                         />
