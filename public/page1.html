@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,26 +15,57 @@
             font-family: 'Cairo', sans-serif;
             background-color: #f7f9fc;
         }
+
         .highlight-box {
             background-color: #fff9e6;
             border-right: 4px solid #f59e0b;
         }
+
         .btn-pulse {
             animation: pulse 2s infinite;
         }
+
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+            }
+        }
+
+        .play-button-overlay {
+            background: rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .play-button-overlay:hover {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .play-icon {
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .play-button-overlay:hover .play-icon {
+            transform: scale(1.1);
         }
     </style>
 </head>
+
 <body class="text-gray-800 antialiased">
 
     <!-- Navbar -->
     <nav class="bg-white shadow-sm py-4">
         <div class="container mx-auto px-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-blue-700">HealthJournal<span class="text-gray-400 text-sm">.eg</span></div>
+            <div class="text-2xl font-bold text-blue-700">HealthJournal<span class="text-gray-400 text-sm">.eg</span>
+            </div>
             <div class="text-xs text-gray-500">Advertorial - إعلان</div>
         </div>
     </nav>
@@ -41,31 +73,51 @@
     <!-- Main Content -->
     <div class="container mx-auto px-4 mt-8 max-w-4xl">
         <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100">
-            
+
             <!-- Headline Section -->
             <div class="p-6 md:p-10">
-                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">صحة وعافية</span>
+                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">صحة
+                    وعافية</span>
                 <h1 class="text-3xl md:text-5xl font-extrabold leading-tight text-gray-900 mb-6">
                     هل تعاني من آلام الركبة عند الاستيقاظ؟ اكتشف الطريقة الجديدة التي يتحدث عنها الجميع في مصر
                 </h1>
                 <p class="text-gray-500 text-sm mb-6 flex items-center">
-                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
                     تم التحديث: اليوم
                 </p>
 
-                <!-- Hero Image -->
-                <div class="mb-8 rounded-xl overflow-hidden bg-gray-200 h-64 md:h-96 w-full relative">
-                    <img src="https://images.unsplash.com/photo-1552084795-a2262d142ec4?q=80&w=2070&auto=format&fit=crop" alt="نشاط وحيوية كبار السن" class="object-cover w-full h-full hover:scale-105 transition-transform duration-700">
+                <!-- Hero Image with Play Button Overlay -->
+                <div
+                    class="mb-8 rounded-xl overflow-hidden bg-gray-200 h-64 md:h-96 w-full relative group cursor-pointer">
+                    <a href="https://arabhealthadvice.com/flexi" class="block w-full h-full relative">
+                        <img src="/assets/native-joint-relief.png" alt="طريقة طبيعية لصحة المفاصل"
+                            class="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-105">
+
+                        <!-- Play Button Overlay -->
+                        <div class="play-button-overlay absolute inset-0 flex items-center justify-center">
+                            <svg class="play-icon w-20 h-20 md:w-24 md:h-24 text-white opacity-90" fill="currentColor"
+                                viewBox="0 0 84 84">
+                                <circle cx="42" cy="42" r="42" fill="white" fill-opacity="0.2" />
+                                <circle cx="42" cy="42" r="32" fill="#ef4444" />
+                                <path d="M55.5 42L35 54V30L55.5 42Z" fill="white" />
+                            </svg>
+                        </div>
+                    </a>
                 </div>
 
                 <!-- Article Body -->
                 <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
                     <p class="text-xl font-semibold mb-6">
-                        إذا كنت واحداً من ملايين المصريين فوق سن الخمسين الذين يجدون صعوبة في صعود السلم أو حتى المشي البسيط، فهذا المقال قد يكون الأهم لك اليوم.
+                        إذا كنت واحداً من ملايين المصريين فوق سن الخمسين الذين يجدون صعوبة في صعود السلم أو حتى المشي
+                        البسيط، فهذا المقال قد يكون الأهم لك اليوم.
                     </p>
 
                     <p class="mb-4">
-                        نحن جميعاً نعرف هذا الشعور. الاستيقاظ في الصباح وتيبس المفاصل، الخوف من الحركة المفاجئة، والاعتماد المتزايد على المسكنات المؤقتة التي قد تضر المعدة على المدى الطويل.
+                        نحن جميعاً نعرف هذا الشعور. الاستيقاظ في الصباح وتيبس المفاصل، الخوف من الحركة المفاجئة،
+                        والاعتماد المتزايد على المسكنات المؤقتة التي قد تضر المعدة على المدى الطويل.
                     </p>
 
                     <div class="highlight-box p-6 my-8 rounded-md italic text-gray-800 font-medium">
@@ -74,12 +126,14 @@
 
                     <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">لماذا تفشل الطرق التقليدية؟</h2>
                     <p class="mb-4">
-                        المشكلة في معظم الحلول المتاحة أنها تركز على "إخفاء" الألم لفترة قصيرة، ولا تتعامل مع السبب الجذري: وهو تآكل الغضاريف ونقص التروية الدموية للمفصل مع التقدم في العمر.
+                        المشكلة في معظم الحلول المتاحة أنها تركز على "إخفاء" الألم لفترة قصيرة، ولا تتعامل مع السبب
+                        الجذري: وهو تآكل الغضاريف ونقص التروية الدموية للمفصل مع التقدم في العمر.
                     </p>
 
                     <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">الاكتشاف الذي غير القواعد</h2>
                     <p class="mb-4">
-                        مؤخراً، بدأ الخبراء في أوروبا والشرق الأوسط بالتركيز على مزيج محدد من 5 مكونات طبيعية. هذا المزيج لا يعمل كمسكن فقط، بل يساعد في دعم صحة الغضروف نفسه.
+                        مؤخراً، بدأ الخبراء في أوروبا والشرق الأوسط بالتركيز على مزيج محدد من 5 مكونات طبيعية. هذا
+                        المزيج لا يعمل كمسكن فقط، بل يساعد في دعم صحة الغضروف نفسه.
                     </p>
                     <ul class="list-disc pr-6 mb-6 space-y-2">
                         <li><strong>الجلوكوزامين:</strong> حجر البناء الأساسي للمفاصل.</li>
@@ -95,11 +149,13 @@
                     <div class="bg-blue-50 border border-blue-200 rounded-xl p-8 text-center mt-10">
                         <h3 class="text-2xl font-bold text-gray-900 mb-4">شاهد الفيديو التفصيلي</h3>
                         <p class="text-gray-600 mb-6">
-                            لقد قمنا بإعداد عرض فيديو قصير يشرح بالضبط كيف يعمل هذا الاكتشاف العلمي، وكيف ساعد الآلاف في مصر على استعادة حركتهم الطبيعية في وقت قياسي.
+                            لقد قمنا بإعداد عرض فيديو قصير يشرح بالضبط كيف يعمل هذا الاكتشاف العلمي، وكيف ساعد الآلاف في
+                            مصر على استعادة حركتهم الطبيعية في وقت قياسي.
                         </p>
-                        
+
                         <!-- CTA Button - Links to VSL Page -->
-                        <a href="https://arabhealthadvice.com/flexi" class="btn-pulse inline-block bg-blue-600 hover:bg-blue-700 text-white text-xl font-bold py-4 px-10 rounded-full shadow-lg transform transition hover:-translate-y-1 mb-4 w-full md:w-auto">
+                        <a href="https://arabhealthadvice.com/flexi"
+                            class="btn-pulse inline-block bg-blue-600 hover:bg-blue-700 text-white text-xl font-bold py-4 px-10 rounded-full shadow-lg transform transition hover:-translate-y-1 mb-4 w-full md:w-auto">
                             شاهد الفيديو الآن >>
                         </a>
                         <p class="text-xs text-gray-500 mt-2">انقر للمشاهدة قبل انتهاء العرض الخاص</p>
@@ -108,22 +164,27 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Social Proof / Soft Testimonials Sidebar (Mobile: Bottom) -->
         <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="bg-white p-6 rounded-lg shadow border border-gray-100">
                 <div class="flex items-center mb-3">
-                    <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center text-gray-600 font-bold ml-3">ف</div>
+                    <div
+                        class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center text-gray-600 font-bold ml-3">
+                        ف</div>
                     <div>
                         <p class="font-bold text-sm">فاطمة، 62 سنة</p>
                         <div class="text-yellow-400 text-xs">★★★★★</div>
                     </div>
                 </div>
-                <p class="text-gray-600 text-sm">"كنت خايفة أطلع السلم، دلوقتي حياتي رجعت طبيعية. الفيديو ده شرح لي كل حاجة."</p>
+                <p class="text-gray-600 text-sm">"كنت خايفة أطلع السلم، دلوقتي حياتي رجعت طبيعية. الفيديو ده شرح لي كل
+                    حاجة."</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow border border-gray-100">
                 <div class="flex items-center mb-3">
-                    <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center text-gray-600 font-bold ml-3">ي</div>
+                    <div
+                        class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center text-gray-600 font-bold ml-3">
+                        ي</div>
                     <div>
                         <p class="font-bold text-sm">يوسف، 65 سنة</p>
                         <div class="text-yellow-400 text-xs">★★★★★</div>
@@ -133,7 +194,9 @@
             </div>
             <div class="bg-white p-6 rounded-lg shadow border border-gray-100">
                 <div class="flex items-center mb-3">
-                    <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center text-gray-600 font-bold ml-3">ن</div>
+                    <div
+                        class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center text-gray-600 font-bold ml-3">
+                        ن</div>
                     <div>
                         <p class="font-bold text-sm">نعيمة، 60 سنة</p>
                         <div class="text-yellow-400 text-xs">★★★★★</div>
@@ -148,20 +211,24 @@
     <footer class="mt-16 bg-gray-900 text-gray-400 py-10 text-sm">
         <div class="container mx-auto px-4 text-center">
             <div class="flex flex-wrap justify-center gap-6 mb-6">
-                <a href="#" class="hover:text-white">سياسة الخصوصية</a>
-                <a href="#" class="hover:text-white">الشروط والأحكام</a>
-                <a href="#" class="hover:text-white">اتصل بنا</a>
-                <a href="#" class="hover:text-white">المصادر العلمية</a>
+                <a href="/privacy" class="hover:text-white">سياسة الخصوصية</a>
+                <a href="/terms" class="hover:text-white">الشروط والأحكام</a>
+                <a href="/contact" class="hover:text-white">اتصل بنا</a>
+                <a href="/" class="hover:text-white">المصادر العلمية</a>
             </div>
             <p class="mb-4 max-w-2xl mx-auto text-xs leading-5">
-                إخلاء مسؤولية: المعلومات المقدمة في هذا الموقع هي لأغراض تعليمية فقط وليست بديلاً عن الاستشارة الطبية المتخصصة. النتائج قد تختلف من شخص لآخر. هذا المنتج ليس دواءً لعلاج الأمراض المستعصية بل هو مكمل داعم لصحة المفاصل.
+                إخلاء مسؤولية: المعلومات المقدمة في هذا الموقع هي لأغراض تعليمية فقط وليست بديلاً عن الاستشارة الطبية
+                المتخصصة. النتائج قد تختلف من شخص لآخر. هذا المنتج ليس دواءً لعلاج الأمراض المستعصية بل هو مكمل داعم
+                لصحة المفاصل.
             </p>
             <p class="mb-4 text-xs">
-                This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.
+                This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed
+                by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.
             </p>
             <p>&copy; 2024 JointFlexi Egypt. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
 </body>
+
 </html>
