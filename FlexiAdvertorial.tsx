@@ -145,8 +145,10 @@ const FlexiAdvertorial: React.FC = () => {
 
     const handleUnmute = () => {
         const iframe = document.getElementById('vsl-video') as HTMLIFrameElement;
-        if (iframe && iframe.contentWindow) {
-            iframe.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
+        if (iframe) {
+            // Reload iframe without mute parameter - more reliable than postMessage
+            const videoId = 'kJfkQ633-Hg';
+            iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0&fs=0&disablekb=1&playsinline=1&widget_referrer=0&origin=${window.location.origin}&enablejsapi=1`;
             setIsMuted(false);
         }
     };
@@ -294,17 +296,22 @@ const FlexiAdvertorial: React.FC = () => {
                             </>
                         )}
 
-                        {/* Unmute Overlay */}
+                        {/* Unmute Overlay - Positioned at top for better visibility */}
                         {videoPlaying && isMuted && (
                             <div
-                                className="absolute inset-0 z-40 flex items-center justify-center bg-black bg-opacity-30 cursor-pointer group"
+                                className="absolute top-4 left-0 right-0 z-50 flex justify-center cursor-pointer"
                                 onClick={handleUnmute}
                             >
-                                <div className="bg-red-600 text-white px-6 py-4 rounded-full flex items-center gap-3 shadow-2xl animate-pulse hover:bg-red-700 transition-colors transform hover:scale-105">
-                                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                                    </svg>
-                                    <span className="text-xl font-bold">انقر هنا لتشغيل الصوت 🔊</span>
+                                <div className="bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-5 rounded-2xl flex items-center gap-4 shadow-2xl hover:from-red-700 hover:to-red-800 transition-all transform hover:scale-105 border-4 border-white">
+                                    <div className="bg-white rounded-full p-2">
+                                        <svg className="w-10 h-10 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+                                        </svg>
+                                    </div>
+                                    <div className="text-right">
+                                        <p className="text-2xl font-black">🔊 انقر هنا لتشغيل الصوت</p>
+                                        <p className="text-sm opacity-90">اضغط لسماع الفيديو</p>
+                                    </div>
                                 </div>
                             </div>
                         )}
