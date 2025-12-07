@@ -289,7 +289,7 @@ const FlexiAdvertorial: React.FC = () => {
                                         bottom: '0px',
                                         right: '0px',
                                         left: '0px',
-                                        height: '100px',
+                                        height: '150px',
                                         background: 'transparent',
                                         pointerEvents: 'auto',
                                         cursor: 'default'
