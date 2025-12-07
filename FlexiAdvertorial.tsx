@@ -22,7 +22,7 @@ const FlexiAdvertorial: React.FC = () => {
     const [finalDiscounts, setFinalDiscounts] = useState<number[] | null>(null);
     const [showPrivacy, setShowPrivacy] = useState(false);
     const [showRefund, setShowRefund] = useState(false);
-    const [videoPlaying, setVideoPlaying] = useState(false);
+    const [videoPlaying, setVideoPlaying] = useState(true);
     const [videoWatchedPercent, setVideoWatchedPercent] = useState(0);
     const [showOffer, setShowOffer] = useState(true);
     const [showDisclaimers, setShowDisclaimers] = useState(false);
@@ -41,6 +41,11 @@ const FlexiAdvertorial: React.FC = () => {
                 sessionStorage.removeItem('doorChoice');
             }
         }
+    }, []);
+
+    useEffect(() => {
+        // Start tracking video progress immediately since it's autoplaying
+        startVideoProgressTracking();
     }, []);
 
     useEffect(() => {
@@ -206,7 +211,7 @@ const FlexiAdvertorial: React.FC = () => {
                                 height: '100%',
                                 border: 'none'
                             }}
-                            src="https://www.youtube-nocookie.com/embed/kJfkQ633-Hg?autoplay=0&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0&fs=0&disablekb=1&playsinline=1&widget_referrer=0&origin=https://yoursite.com&enablejsapi=0"
+                            src="https://www.youtube-nocookie.com/embed/kJfkQ633-Hg?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0&fs=0&disablekb=1&playsinline=1&widget_referrer=0&origin=https://yoursite.com&enablejsapi=0"
                             title="Joint Flexi Video Sales Letter"
                             frameBorder="0"
                             sandbox="allow-scripts allow-same-origin allow-presentation"
