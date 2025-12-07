@@ -25,7 +25,7 @@ const FlexiAdvertorial: React.FC = () => {
     const [videoPlaying, setVideoPlaying] = useState(true);
     const [isMuted, setIsMuted] = useState(true);
     const [videoWatchedPercent, setVideoWatchedPercent] = useState(0);
-    const [showOffer, setShowOffer] = useState(true);
+    const [showOffer, setShowOffer] = useState(false);
     const [showDisclaimers, setShowDisclaimers] = useState(false);
 
     useEffect(() => {
@@ -173,24 +173,26 @@ const FlexiAdvertorial: React.FC = () => {
     };
 
     const startVideoProgressTracking = () => {
-        // Simulate video progress tracking (since YouTube API has CORS limitations)
-        // In production, you'd use YouTube IFrame API properly
-        let progress = 0;
-        const interval = setInterval(() => {
-            progress += 1;
-            setVideoWatchedPercent(progress);
+        // Show offer after exactly 3:46 (226 seconds) of video playback
+        const OFFER_REVEAL_TIME = 226; // 3 minutes and 46 seconds in seconds
+        let secondsWatched = 0;
 
-            // Show offer at 33% (assuming ~11 minute video = 660 seconds, 33% = 218 seconds)
-            // We'll simulate 1% every 7 seconds (660/100 = 6.6)
-            if (progress >= 33 && !showOffer) {
+        const interval = setInterval(() => {
+            secondsWatched += 1;
+            // Update progress based on an estimated 11-minute video (660 seconds)
+            const percent = Math.min(Math.round((secondsWatched / 660) * 100), 100);
+            setVideoWatchedPercent(percent);
+
+            // Show offer at exactly 3:46 (226 seconds)
+            if (secondsWatched >= OFFER_REVEAL_TIME) {
                 setShowOffer(true);
                 clearInterval(interval);
             }
 
-            if (progress >= 100) {
+            if (secondsWatched >= 660) {
                 clearInterval(interval);
             }
-        }, 7000); // Update every 7 seconds to reach 33% in ~3.85 minutes
+        }, 1000); // Update every 1 second for accurate timing
     };
 
     const originalPrice = 1898;
