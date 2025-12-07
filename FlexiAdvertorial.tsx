@@ -145,10 +145,22 @@ const FlexiAdvertorial: React.FC = () => {
 
     const handleUnmute = () => {
         const iframe = document.getElementById('vsl-video') as HTMLIFrameElement;
-        if (iframe) {
-            // Reload iframe without mute parameter - more reliable than postMessage
-            const videoId = 'kJfkQ633-Hg';
-            iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0&fs=0&disablekb=1&playsinline=1&widget_referrer=0&origin=${window.location.origin}&enablejsapi=1`;
+        if (iframe && iframe.contentWindow) {
+            // Use YouTube IFrame API postMessage to unmute without restarting
+            const message = JSON.stringify({
+                event: 'command',
+                func: 'unMute'
+            });
+            iframe.contentWindow.postMessage(message, 'https://www.youtube-nocookie.com');
+
+            // Also try setting volume as backup
+            const volumeMessage = JSON.stringify({
+                event: 'command',
+                func: 'setVolume',
+                args: [100]
+            });
+            iframe.contentWindow.postMessage(volumeMessage, 'https://www.youtube-nocookie.com');
+
             setIsMuted(false);
         }
     };
