@@ -1,56 +1,64 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Form Test</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17675348213"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-17675348213');
+    </script>
 </head>
+
 <body>
     <h1>Test Form Submission</h1>
-    
-    <form 
-        action="https://moab.lovestoblog.com/apiegy.php" 
-        method="GET" 
-        onsubmit="debugForm(event)"
-    >
+
+    <form action="https://moab.lovestoblog.com/apiegy.php" method="GET" onsubmit="debugForm(event)">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" value="Test Name" required><br><br>
-        
+
         <label for="phone">Phone:</label>
         <input type="text" id="phone" name="phone" value="01012345678" required><br><br>
-        
+
         <!-- Hidden fields -->
         <input type="hidden" name="i" value="2">
         <input type="hidden" name="submit" value="submit">
         <input type="hidden" name="subacc" value="">
-        
+
         <button type="submit" name="submit" value="submit">Submit Test</button>
     </form>
 
     <script>
         function debugForm(event) {
             console.log('=== FORM SUBMISSION DEBUG ===');
-            
+
             const form = event.target;
             const formData = new FormData(form);
-            
+
             console.log('Form action:', form.action);
             console.log('Form method:', form.method);
             console.log('Form enctype:', form.enctype);
-            
+
             console.log('\n--- Form Data ---');
             for (let [key, value] of formData.entries()) {
                 console.log(`${key}: "${value}"`);
             }
-            
+
             // Show what will be sent as URL-encoded
             const params = new URLSearchParams(formData);
             console.log('\n--- URL-encoded data ---');
             console.log(params.toString());
-            
+
             alert('Check console for debug info. Form will submit in 3 seconds...');
-            
+
             // Let form submit normally after brief delay
             return true;
         }
     </script>
 </body>
+
 </html>
