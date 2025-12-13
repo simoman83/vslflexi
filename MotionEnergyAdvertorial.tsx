@@ -746,17 +746,16 @@ const MotionEnergyAdvertorial: React.FC = () => {
                 </div>
             )}
 
-            {/* Important Disclaimers Section */}
-            <div className="bg-gray-200 py-8 px-5">
-                <div className="max-w-4xl mx-auto">
-                    <div className="bg-white rounded-lg shadow-md border-2 border-gray-300">
+            <Footer onShowPrivacy={() => setShowPrivacy(true)} onShowRefund={() => setShowRefund(true)}>
+                <div className="max-w-4xl mx-auto text-right" dir="rtl">
+                    <div className="bg-slate-700/50 rounded-lg shadow-inner border border-slate-600">
                         <button
                             onClick={() => setShowDisclaimers(!showDisclaimers)}
-                            className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors rounded-t-lg"
+                            className="w-full p-4 text-right flex justify-between items-center hover:bg-slate-700 transition-colors rounded-t-lg"
                         >
-                            <h3 className="text-xl font-bold text-gray-800">⚠️ معلومات مهمة</h3>
+                            <h3 className="text-lg font-bold text-gray-300">⚠️ معلومات مهمة</h3>
                             <svg
-                                className={`w-6 h-6 text-gray-600 transition-transform ${showDisclaimers ? 'rotate-180' : ''}`}
+                                className={`w-5 h-5 text-gray-400 transition-transform ${showDisclaimers ? 'rotate-180' : ''}`}
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
@@ -766,7 +765,7 @@ const MotionEnergyAdvertorial: React.FC = () => {
                         </button>
 
                         <div className={`overflow-hidden transition-all duration-300 ${showDisclaimers ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                            <div className="px-6 pb-6 text-sm text-gray-700 space-y-3">
+                            <div className="px-4 pb-4 text-sm text-gray-400 space-y-2">
                                 <p>
                                     <strong>إخلاء المسؤولية:</strong> المعلومات المقدمة على هذا الموقع هي لأغراض تعليمية فقط ولا تُعتبر نصيحة طبية. Motion Energy هو بلسم موضعي للاستخدام الخارجي فقط.
                                 </p>
@@ -776,16 +775,14 @@ const MotionEnergyAdvertorial: React.FC = () => {
                                 <p>
                                     <strong>النتائج الفردية:</strong> النتائج قد تختلف من شخص لآخر. التجارب والآراء المعروضة هي تجارب شخصية.
                                 </p>
-                                <p className="text-xs text-gray-600 mt-4 italic">
+                                <p className="text-xs text-gray-500 mt-2 italic">
                                     آخر تحديث: 2025. جميع المعلومات المقدمة هي لأغراض تعليمية عامة فقط.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <Footer onShowPrivacy={() => setShowPrivacy(true)} onShowRefund={() => setShowRefund(true)} />
+            </Footer>
 
             {showPrivacy && <PrivacyPolicy onClose={() => setShowPrivacy(false)} />}
             {showRefund && <RefundPolicy onClose={() => setShowRefund(false)} />}
