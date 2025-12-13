@@ -243,7 +243,7 @@ const MotionEnergyAdvertorial: React.FC = () => {
 
     return (
         <>
-            <Header />
+            <Header title="📰 أخبار الصحة الجزائرية" />
             <main className="max-w-4xl mx-auto bg-white shadow-lg">
 
                 {/* VSL Video Section */}
