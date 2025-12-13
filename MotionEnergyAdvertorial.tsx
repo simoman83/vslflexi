@@ -29,6 +29,7 @@ const MotionEnergyAdvertorial: React.FC = () => {
     const [videoWatchedPercent, setVideoWatchedPercent] = useState(0);
     const [showOffer, setShowOffer] = useState(false);
     const [showDisclaimers, setShowDisclaimers] = useState(false);
+    const [videoEnded, setVideoEnded] = useState(false);
 
     useEffect(() => {
         // Check session storage on initial load
@@ -162,19 +163,21 @@ const MotionEnergyAdvertorial: React.FC = () => {
     const startVideoProgressTracking = () => {
         // Show offer after 3:30 (210 seconds) of video playback
         const OFFER_REVEAL_TIME = 210;
+        // Video duration approximately 10 minutes (600 seconds)
+        const VIDEO_DURATION = 600;
         let secondsWatched = 0;
 
         const interval = setInterval(() => {
             secondsWatched += 1;
-            const percent = Math.min(Math.round((secondsWatched / 600) * 100), 100);
+            const percent = Math.min(Math.round((secondsWatched / VIDEO_DURATION) * 100), 100);
             setVideoWatchedPercent(percent);
 
             if (secondsWatched >= OFFER_REVEAL_TIME) {
                 setShowOffer(true);
-                clearInterval(interval);
             }
 
-            if (secondsWatched >= 600) {
+            if (secondsWatched >= VIDEO_DURATION) {
+                setVideoEnded(true);
                 clearInterval(interval);
             }
         }, 1000);
@@ -237,7 +240,7 @@ const MotionEnergyAdvertorial: React.FC = () => {
                         />
 
                         {/* Full overlay to block all clicks on YouTube video */}
-                        {videoPlaying && (
+                        {videoPlaying && !videoEnded && (
                             <div
                                 className="absolute inset-0 z-40"
                                 style={{
@@ -251,6 +254,32 @@ const MotionEnergyAdvertorial: React.FC = () => {
                                 }}
                                 onContextMenu={(e) => e.preventDefault()}
                             />
+                        )}
+
+                        {/* Video Ended CTA Overlay */}
+                        {videoEnded && (
+                            <div
+                                className="absolute inset-0 z-50 flex items-center justify-center"
+                                style={{
+                                    background: 'rgba(0, 0, 0, 0.85)',
+                                }}
+                            >
+                                <div className="text-center p-8">
+                                    <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">
+                                        🎉 شاهدت الفيديو كاملاً!
+                                    </h2>
+                                    <p className="text-xl text-gray-200 mb-8">
+                                        الآن احصل على Motion Energy بخصم 50%
+                                    </p>
+                                    <a
+                                        href="#order-form"
+                                        onClick={scrollToForm}
+                                        className="inline-block bg-gradient-to-r from-orange-500 to-red-600 text-white text-2xl md:text-3xl font-extrabold py-5 px-12 rounded-full shadow-2xl hover:scale-105 transition-transform animate-pulse"
+                                    >
+                                        🛒 احصل على العرض الآن
+                                    </a>
+                                </div>
+                            </div>
                         )}
 
                         {/* Unmute Overlay */}
