@@ -14,7 +14,7 @@ import { RefundPolicy } from './components/RefundPolicy';
 const MotionEnergyProduct = '/assets/motion-energy-product.png';
 
 // YouTube Video ID for Motion Energy VSL
-const YOUTUBE_VIDEO_ID = 'MSXqjofvFKc';
+const YOUTUBE_VIDEO_ID = 'k-aE3yRzRrM';
 
 
 const MotionEnergyAdvertorial: React.FC = () => {
