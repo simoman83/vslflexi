@@ -250,13 +250,13 @@ const MotionEnergyAdvertorial: React.FC = () => {
                 <div className="bg-gradient-to-br from-orange-900 to-red-800 py-8 px-5">
                     <div className="text-center mb-6">
                         <h1 className="text-3xl md:text-4xl font-extrabold text-white mb-3 leading-tight">
-                            عندما لا تتيح لك مفاصلك أن تعيش حياة طبيعية!
+                            طبيب جزائري يكشف عن سر آسيوي قديم لآلام المفاصل
                         </h1>
                         <p className="text-xl md:text-2xl text-yellow-300 font-bold">
-                            اكتشف البلسم الثوري الذي صنع معجزة لآلاف الأشخاص
+                            "بعد سنتين من البحث... اكتشفت ما أخفاه الأطباء عنك!"
                         </p>
                         <p className="text-lg text-gray-300 mt-3">
-                            (شاهد الفيديو حتى النهاية لمعرفة السر والعرض الخاص)
+                            (شاهد الفيديو كاملاً لتكتشف الحل الذي غيّر حياة الآلاف)
                         </p>
                     </div>
 
@@ -380,7 +380,7 @@ const MotionEnergyAdvertorial: React.FC = () => {
 
                     <div className="text-center mt-6">
                         <p className="text-lg text-white">
-                            تعرّف على قصة اختراع Motion Energy المذهلة
+                            اكتشف السر الذي غيّر حياة أكثر من 17,000 شخص يعانون من آلام المفاصل
                         </p>
                     </div>
                 </div>
