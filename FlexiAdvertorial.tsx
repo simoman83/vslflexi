@@ -387,26 +387,31 @@ const FlexiAdvertorial: React.FC = () => {
 
                 {/* Keep Watching Message OR Offer */}
                 {!showOffer ? (
-                    <div className="bg-gradient-to-br from-slate-700 to-slate-900 text-white py-16 px-5 text-center">
+                    <div className="bg-gradient-to-br from-slate-50 to-slate-100 text-slate-800 py-10 px-5 text-center border-t-4 border-yellow-400">
                         <div className="max-w-2xl mx-auto">
-                            <div className="mb-6">
-                                <svg className="w-20 h-20 mx-auto text-yellow-400 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                                </svg>
-                            </div>
-                            <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-                                ⏳ استمر في المشاهدة...
+                            <h2 className="text-2xl md:text-3xl font-extrabold mb-6 text-slate-900">
+                                🔒 ما ستكتشفه في هذا الفيديو القصير:
                             </h2>
-                            <p className="text-xl text-gray-300 mb-4">
-                                العرض الحصري سيظهر بعد مشاهدة الفيديو
-                            </p>
-                            <div className="w-full max-w-md mx-auto bg-slate-800 rounded-full h-4 mt-6">
-                                <div
-                                    className="bg-gradient-to-r from-yellow-400 to-orange-500 h-4 rounded-full transition-all duration-500"
-                                    style={{ width: `${videoWatchedPercent}%` }}
-                                />
+                            <div className="space-y-4 text-right">
+                                <div className="flex items-start bg-white p-4 rounded-lg shadow-sm border border-slate-200">
+                                    <span className="text-2xl ml-3">🛑</span>
+                                    <p className="font-semibold text-lg">السبب رقم #1 لآلام المفاصل المستمرة في مصر (وكيفية تجنبه بسهولة).</p>
+                                </div>
+                                <div className="flex items-start bg-white p-4 rounded-lg shadow-sm border border-slate-200">
+                                    <span className="text-2xl ml-3">🌿</span>
+                                    <p className="font-semibold text-lg">المكون الطبيعي المفقود الذي يساعد في دعم راحة المفاصل واستعادة الحركة.</p>
+                                </div>
+                                <div className="flex items-start bg-white p-4 rounded-lg shadow-sm border border-slate-200">
+                                    <span className="text-2xl ml-3">🏃</span>
+                                    <p className="font-semibold text-lg">كيف يمكنك العودة لممارسة حياتك الطبيعية والصلاة والحركة بدون انزعاج.</p>
+                                </div>
                             </div>
-                            <p className="text-sm text-gray-400 mt-3">{videoWatchedPercent}% مكتمل</p>
+                            <div className="mt-8 flex items-center justify-center gap-2 text-red-600 font-bold animate-pulse">
+                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.414z" clipRule="evenodd" />
+                                </svg>
+                                <span>تأكد من تشغيل الصوت للاستماع للشرح</span>
+                            </div>
                         </div>
                     </div>
                 ) : (
