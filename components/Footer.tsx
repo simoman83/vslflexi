@@ -9,7 +9,7 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ onShowPrivacy, onShowRefund, children }) => {
     return (
         <footer className="text-center py-6 bg-slate-800 text-gray-400 text-sm">
-            <p>&copy; 2025. جميع الحقوق محفوظة لـ Joint Flexi.</p>
+            <p>&copy; 2025. جميع الحقوق محفوظة.</p>
             <div className="mt-2">
                 <a href="#" onClick={(e) => { e.preventDefault(); onShowPrivacy(); }} className="hover:underline mx-2">سياسة الخصوصية</a>
                 <span className="mx-1">|</span>

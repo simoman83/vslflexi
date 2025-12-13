@@ -245,7 +245,7 @@ const FlexiAdvertorial: React.FC = () => {
                                 border: 'none'
                             }}
                             src={`https://www.youtube.com/embed/kJfkQ633-Hg?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0&fs=0&disablekb=1&playsinline=1&widget_referrer=0&origin=${typeof window !== 'undefined' ? window.location.origin : ''}&enablejsapi=1`}
-                            title="Joint Flexi Video Sales Letter"
+                            title="Video Sales Letter"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             referrerPolicy="strict-origin-when-cross-origin"
