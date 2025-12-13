@@ -32,7 +32,7 @@ const MotionEnergyAdvertorial: React.FC = () => {
     const [videoEnded, setVideoEnded] = useState(false);
 
     useEffect(() => {
-        // Check session storage on initial load
+        // Check session storage on initial load for door choice
         const storedChoice = sessionStorage.getItem('motionEnergyDoorChoice');
         if (storedChoice) {
             try {
@@ -45,11 +45,30 @@ const MotionEnergyAdvertorial: React.FC = () => {
                 sessionStorage.removeItem('motionEnergyDoorChoice');
             }
         }
-    }, []);
 
-    useEffect(() => {
-        // Start tracking video progress immediately since it's autoplaying
-        startVideoProgressTracking();
+        // Check session storage for video progress state
+        const storedVideoProgress = sessionStorage.getItem('motionEnergyVideoProgress');
+        if (storedVideoProgress) {
+            try {
+                const { secondsWatched, offerShown, ended } = JSON.parse(storedVideoProgress);
+                if (offerShown) {
+                    setShowOffer(true);
+                }
+                if (ended) {
+                    setVideoEnded(true);
+                }
+                setVideoWatchedPercent(Math.min(Math.round((secondsWatched / 600) * 100), 100));
+                // Start tracking from where we left off
+                startVideoProgressTracking(secondsWatched);
+            } catch (error) {
+                console.error("Failed to parse video progress from sessionStorage", error);
+                sessionStorage.removeItem('motionEnergyVideoProgress');
+                startVideoProgressTracking(0);
+            }
+        } else {
+            // Start fresh tracking
+            startVideoProgressTracking(0);
+        }
     }, []);
 
     useEffect(() => {
@@ -160,17 +179,35 @@ const MotionEnergyAdvertorial: React.FC = () => {
         }
     };
 
-    const startVideoProgressTracking = () => {
+    const startVideoProgressTracking = (startFrom: number = 0) => {
         // Show offer after 3:30 (210 seconds) of video playback
         const OFFER_REVEAL_TIME = 210;
         // Video duration approximately 10 minutes (600 seconds)
         const VIDEO_DURATION = 600;
-        let secondsWatched = 0;
+        let secondsWatched = startFrom;
+
+        // If already past the thresholds, set states immediately
+        if (secondsWatched >= OFFER_REVEAL_TIME) {
+            setShowOffer(true);
+        }
+        if (secondsWatched >= VIDEO_DURATION) {
+            setVideoEnded(true);
+            return; // No need to start interval if video already ended
+        }
 
         const interval = setInterval(() => {
             secondsWatched += 1;
             const percent = Math.min(Math.round((secondsWatched / VIDEO_DURATION) * 100), 100);
             setVideoWatchedPercent(percent);
+
+            // Save progress to sessionStorage every 5 seconds
+            if (secondsWatched % 5 === 0) {
+                sessionStorage.setItem('motionEnergyVideoProgress', JSON.stringify({
+                    secondsWatched,
+                    offerShown: secondsWatched >= OFFER_REVEAL_TIME,
+                    ended: secondsWatched >= VIDEO_DURATION
+                }));
+            }
 
             if (secondsWatched >= OFFER_REVEAL_TIME) {
                 setShowOffer(true);
@@ -178,6 +215,11 @@ const MotionEnergyAdvertorial: React.FC = () => {
 
             if (secondsWatched >= VIDEO_DURATION) {
                 setVideoEnded(true);
+                sessionStorage.setItem('motionEnergyVideoProgress', JSON.stringify({
+                    secondsWatched,
+                    offerShown: true,
+                    ended: true
+                }));
                 clearInterval(interval);
             }
         }, 1000);
