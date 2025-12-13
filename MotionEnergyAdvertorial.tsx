@@ -30,6 +30,7 @@ const MotionEnergyAdvertorial: React.FC = () => {
     const [showOffer, setShowOffer] = useState(false);
     const [showDisclaimers, setShowDisclaimers] = useState(false);
     const [videoEnded, setVideoEnded] = useState(false);
+    const [videoStartTime, setVideoStartTime] = useState(0);
 
     useEffect(() => {
         // Check session storage on initial load for door choice
@@ -58,6 +59,8 @@ const MotionEnergyAdvertorial: React.FC = () => {
                     setVideoEnded(true);
                 }
                 setVideoWatchedPercent(Math.min(Math.round((secondsWatched / 600) * 100), 100));
+                // Set video start time so YouTube starts from saved position
+                setVideoStartTime(secondsWatched);
                 // Start tracking from where we left off
                 startVideoProgressTracking(secondsWatched);
             } catch (error) {
@@ -274,7 +277,7 @@ const MotionEnergyAdvertorial: React.FC = () => {
                                 height: '100%',
                                 border: 'none'
                             }}
-                            src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0&fs=0&disablekb=1&playsinline=1&widget_referrer=0&origin=${typeof window !== 'undefined' ? window.location.origin : ''}&enablejsapi=1`}
+                            src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0&fs=0&disablekb=1&playsinline=1&widget_referrer=0&origin=${typeof window !== 'undefined' ? window.location.origin : ''}&enablejsapi=1&start=${videoStartTime}`}
                             title="Motion Energy Video Sales Letter"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
