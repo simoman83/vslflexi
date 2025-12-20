@@ -9,25 +9,28 @@ import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
 import BridgePage from './pages/BridgePage';
 import { KneeTipsArticle, NutritionArticle, BackPainArticle, WalkingBenefitsArticle, SleepTipsArticle } from './pages/ArticlePage';
+import FacebookPixelWrapper from './components/FacebookPixelWrapper';
 
 const App: React.FC = () => {
     return (
         <Router>
-            <Routes>
-                <Route path="/" element={<HealthBlog />} />
-                <Route path="/flexi" element={<FlexiAdvertorial />} />
-                <Route path="/motionenergy" element={<MotionEnergyAdvertorial />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/contact" element={<ContactPage />} />
-                <Route path="/terms" element={<TermsPage />} />
-                <Route path="/privacy" element={<PrivacyPage />} />
-                <Route path="/page2" element={<BridgePage />} />
-                <Route path="/article/knee-exercises" element={<KneeTipsArticle />} />
-                <Route path="/article/nutrition" element={<NutritionArticle />} />
-                <Route path="/article/back-pain" element={<BackPainArticle />} />
-                <Route path="/article/walking-benefits" element={<WalkingBenefitsArticle />} />
-                <Route path="/article/sleep-tips" element={<SleepTipsArticle />} />
-            </Routes>
+            <FacebookPixelWrapper>
+                <Routes>
+                    <Route path="/" element={<HealthBlog />} />
+                    <Route path="/flexi" element={<FlexiAdvertorial />} />
+                    <Route path="/motionenergy" element={<MotionEnergyAdvertorial />} />
+                    <Route path="/about" element={<AboutPage />} />
+                    <Route path="/contact" element={<ContactPage />} />
+                    <Route path="/terms" element={<TermsPage />} />
+                    <Route path="/privacy" element={<PrivacyPage />} />
+                    <Route path="/page2" element={<BridgePage />} />
+                    <Route path="/article/knee-exercises" element={<KneeTipsArticle />} />
+                    <Route path="/article/nutrition" element={<NutritionArticle />} />
+                    <Route path="/article/back-pain" element={<BackPainArticle />} />
+                    <Route path="/article/walking-benefits" element={<WalkingBenefitsArticle />} />
+                    <Route path="/article/sleep-tips" element={<SleepTipsArticle />} />
+                </Routes>
+            </FacebookPixelWrapper>
         </Router>
     );
 };
