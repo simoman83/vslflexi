@@ -172,7 +172,7 @@ const BridgePage: React.FC = () => {
                     <a href="/motionenergy" className="top-cta">اضغط هنا لمشاهدة الفيديو الآن</a>
 
                     <div className="headline-box">
-                        <h1 className="headline">خبير ألماني يكشف: هذه الطريقة التي تستغرق 10 ثوانٍ تقضي على آلام المفاصل لدى الرجال والنساء فوق سن 50</h1>
+                        <h1 className="headline">خبير ألماني يكشف: روتين بسيط لدعم راحة المفاصل للرجال والنساء فوق سن 50</h1>
                         <p className="sub-headline">(شاهد هذا العرض التقديمي القصير)</p>
                     </div>
 
@@ -186,10 +186,10 @@ const BridgePage: React.FC = () => {
 
                     <div className="content-text">
                         <p>
-                            اكتشف علماء وباحثون حائزون على جوائز من ألمانيا <strong>اختراقاً صادماً لإعادة إحياء المفاصل</strong> و<strong>طريقة واحدة بسيطة</strong> للتخلص من آلام المفاصل بنسبة تصل إلى 95% في أقل من أسبوعين...
+                            شارك علماء وباحثون من ألمانيا <strong>طريقة طبيعية لدعم صحة المفاصل</strong> و<strong>خطوات بسيطة</strong> لتحسين الحركة والشعور بالراحة...
                         </p>
                         <p>
-                            في الواقع، تعمل هذه الطريقة بشكل مذهل لدرجة أن شركات الأدوية الكبرى تسعى جاهدة لإزالة <strong><u>هذا الفيديو</u></strong> من الإنترنت قبل أن تخسر المزيد من الأموال. انقر على الزر أعلاه لمشاهدة كل التفاصيل الرائعة قبل فوات الأوان!
+                            هذه الطريقة تعتمد على أسس علمية وقد لاحظ العديد من الأشخاص تحسناً ملحوظاً. انقر على الزر أعلاه لمشاهدة الفيديو ومعرفة المزيد عن كيفية دعم صحة مفاصلك بطرق طبيعية.
                         </p>
                     </div>
 
@@ -198,10 +198,11 @@ const BridgePage: React.FC = () => {
                     <div className="as-seen-on-banner">
                         <h3>كما ظهر على</h3>
                         <div className="logos">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Al_Jazeera_English_logo.svg/512px-Al_Jazeera_English_logo.svg.png" alt="Al Jazeera" />
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Sky_News_Arabia_logo.svg/512px-Sky_News_Arabia_logo.svg.png" alt="Sky News Arabia" />
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Al-Arabiya_logo.svg/512px-Al-Arabiya_logo.svg.png" alt="Al Arabiya" />
-                            <img src="https://logowik.com/content/uploads/images/bbc-news-arabic5559.jpg" alt="BBC Arabic" />
+                            <img src="/assets/aljazeera_gen.svg" alt="Al Jazeera" />
+                            <img src="/assets/skynews_gen.svg" alt="Sky News Arabia" />
+                            <img src="/assets/alarabiya_gen.svg" alt="Al Arabiya" />
+                            <img src="/assets/bbc_gen.svg" alt="BBC Arabic" />
+                            <img src="/assets/foxnews.svg" alt="Fox News" style={{ width: '60px' }} />
                         </div>
                     </div>
                 </div>
