@@ -775,46 +775,25 @@ const FlexiAdvertorial: React.FC = () => {
                 </div>
             )}
 
-            {/* Important Disclaimers Section - Always rendered but toggleable */}
-            <div className="bg-gray-200 py-8 px-5">
+            {/* Simple Small Disclaimer Section */}
+            <div className="bg-gray-100 py-6 px-5 border-t border-gray-200">
                 <div className="max-w-4xl mx-auto">
-                    <div className="bg-white rounded-lg shadow-md border-2 border-gray-300">
-                        {/* Toggleable Header */}
-                        <button
-                            onClick={() => setShowDisclaimers(!showDisclaimers)}
-                            className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors rounded-t-lg"
-                        >
-                            <h3 className="text-xl font-bold text-gray-800">⚠️ معلومات مهمة</h3>
-                            <svg
-                                className={`w-6 h-6 text-gray-600 transition-transform ${showDisclaimers ? 'rotate-180' : ''}`}
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-
-                        {/* Collapsible Content - Always in DOM */}
-                        <div className={`overflow-hidden transition-all duration-300 ${showDisclaimers ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                            <div className="px-6 pb-6 text-sm text-gray-700 space-y-3">
-                                <p>
-                                    <strong>إخلاء المسؤولية:</strong> المعلومات المقدمة على هذا الموقع هي لأغراض تعليمية فقط ولا تُعتبر نصيحة طبية. Joint Flexi هو كريم موضعي للاستخدام الخارجي فقط ولا يُقصد به تشخيص أو علاج أو شفاء أو منع أي مرض.
-                                </p>
-                                <p>
-                                    <strong>استشر طبيبك:</strong> قبل استخدام هذا المنتج أو أي منتج جديد، يُنصح بشدة باستشارة الطبيب المختص، خاصة إذا كنت تعاني من حالة صحية مزمنة أو تتناول أدوية بوصفة طبية.
-                                </p>
-                                <p>
-                                    <strong>النتائج الفردية:</strong> النتائج قد تختلف من شخص لآخر. التجارب والآراء المعروضة هي تجارب شخصية ولا تمثل ضماناً أو وعداً بنتائج محددة. لا يوجد منتج يعمل بنفس الطريقة مع جميع الأشخاص.
-                                </p>
-                                <p>
-                                    <strong>ليس بديلاً طبياً:</strong> هذا المنتج ليس بديلاً عن العلاج الطبي أو الأدوية الموصوفة من قبل طبيبك. لا تتوقف عن تناول أي دواء موصوف دون استشارة طبيبك.
-                                </p>
-                                <p className="text-xs text-gray-600 mt-4 italic">
-                                    آخر تحديث: 2025. جميع المعلومات المقدمة هي لأغراض تعليمية عامة فقط.
-                                </p>
-                            </div>
-                        </div>
+                    <div className="text-[10px] md:text-xs text-gray-500 space-y-2 text-right leading-relaxed" dir="rtl">
+                        <p>
+                            <strong>إخلاء المسؤولية:</strong> المعلومات المقدمة على هذا الموقع هي لأغراض تعليمية فقط ولا تُعتبر نصيحة طبية. Joint Flexi هو كريم موضعي للاستخدام الخارجي فقط ولا يُقصد به تشخيص أو علاج أو شفاء أو منع أي مرض.
+                        </p>
+                        <p>
+                            <strong>استشر طبيبك:</strong> قبل استخدام هذا المنتج أو أي منتج جديد، يُنصح بشدة باستشارة الطبيب المختص، خاصة إذا كنت تعاني من حالة صحية مزمنة أو تتناول أدوية بوصفة طبية.
+                        </p>
+                        <p>
+                            <strong>النتائج الفردية:</strong> النتائج قد تختلف من شخص لآخر. التجارب والآراء المعروضة هي تجارب شخصية ولا تمثل ضماناً أو وعداً بنتائج محددة. لا يوجد منتج يعمل بنفس الطريقة مع جميع الأشخاص.
+                        </p>
+                        <p>
+                            <strong>ليس بديلاً طبياً:</strong> هذا المنتج ليس بديلاً عن العلاج الطبي أو الأدوية الموصوفة من قبل طبيبك. لا تتوقف عن تناول أي دواء موصوف دون استشارة طبيبك.
+                        </p>
+                        <p className="opacity-75 italic">
+                            آخر تحديث: 2025. جميع المعلومات المقدمة هي لأغراض تعليمية عامة فقط.
+                        </p>
                     </div>
                 </div>
             </div>
