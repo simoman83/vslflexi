@@ -178,7 +178,7 @@ const BridgePage: React.FC = () => {
 
                     <a href="/motionenergy">
                         <div className="video-container">
-                            <img src="https://i.ibb.co/6P8v3mH/joint-pain-bridge-image.jpg" alt="عرض توضيحي لآلام المفاصل وعلاجها" className="video-image" />
+                            <img src="/assets/joint-pain-bridge-image-v2.png" alt="عرض توضيحي لآلام المفاصل وعلاجها" className="video-image" />
                             <div className="play-button-overlay"></div>
                             <div className="sound-icon">🔊 اضغط لتشغيل الصوت</div>
                         </div>
