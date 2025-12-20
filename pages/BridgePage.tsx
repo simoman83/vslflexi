@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const BridgePage: React.FC = () => {
     return (
@@ -210,9 +211,9 @@ const BridgePage: React.FC = () => {
                 <footer>
                     <div className="footer-logo">راحة برو</div>
                     <div className="footer-links">
-                        <a href="#">سياسة الخصوصية</a> |
-                        <a href="#">الشروط والأحكام</a> |
-                        <a href="#">تواصل معنا</a>
+                        <Link to="/privacy">سياسة الخصوصية</Link> |
+                        <Link to="/terms">الشروط والأحكام</Link> |
+                        <Link to="/contact">تواصل معنا</Link>
                     </div>
                     <p className="disclaimer">
                         إخلاء مسؤولية: لم يتم تقييم هذه البيانات من قبل إدارة الغذاء والدواء. هذا المنتج غير مخصص لتشخيص أي مرض أو علاجه أو الوقاية منه. إذا كنت حاملاً أو مرضعة أو تتناولين أدوية أو تعانين من حالة طبية، فاستشيري طبيبك قبل استخدام منتجاتنا. المعلومات الواردة في هذا الموقع مقدمة لأغراض إعلامية عامة فقط. النتائج قد تختلف من شخص لآخر. الشهادات الواردة هي من أشخاص حقيقيين وقد لا تعكس تجربة المشتري العادي.

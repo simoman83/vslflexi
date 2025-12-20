@@ -751,7 +751,7 @@ const MotionEnergyAdvertorial: React.FC = () => {
                 </div>
             )}
 
-            <Footer onShowPrivacy={() => setShowPrivacy(true)} onShowRefund={() => setShowRefund(true)}>
+            <Footer>
                 <div className="max-w-4xl mx-auto">
                     <div className="text-[10px] md:text-xs text-gray-500 space-y-2 text-right leading-relaxed border-t border-slate-700 pt-6 mt-6" dir="rtl">
                         <p>

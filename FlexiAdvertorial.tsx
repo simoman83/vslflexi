@@ -798,7 +798,7 @@ const FlexiAdvertorial: React.FC = () => {
                 </div>
             </div>
 
-            <Footer onShowPrivacy={() => setShowPrivacy(true)} onShowRefund={() => setShowRefund(true)} />
+            <Footer />
 
             {showPrivacy && <PrivacyPolicy onClose={() => setShowPrivacy(false)} />}
             {showRefund && <RefundPolicy onClose={() => setShowRefund(false)} />}
