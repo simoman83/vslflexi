@@ -7,6 +7,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
+import BridgePage from './pages/BridgePage';
 import { KneeTipsArticle, NutritionArticle, BackPainArticle, WalkingBenefitsArticle, SleepTipsArticle } from './pages/ArticlePage';
 
 const App: React.FC = () => {
@@ -20,6 +21,7 @@ const App: React.FC = () => {
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/terms" element={<TermsPage />} />
                 <Route path="/privacy" element={<PrivacyPage />} />
+                <Route path="/page2" element={<BridgePage />} />
                 <Route path="/article/knee-exercises" element={<KneeTipsArticle />} />
                 <Route path="/article/nutrition" element={<NutritionArticle />} />
                 <Route path="/article/back-pain" element={<BackPainArticle />} />
